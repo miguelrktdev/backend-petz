@@ -12,3 +12,130 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model User {
+  id             String          @id @default(uuid())
+  name           String
+  username       String
+  email          String
+  password_hash  String
+  bio            String?
+  profile_pic    String?
+  profile_pic_id String?
+  created_at     DateTime        @default(now())
+  updated_at     DateTime        @updatedAt
+  Otps           OTP[]
+  ResetPasswords ResetPassword[]
+
+  @@map("users")
+}
+
+model OTP {
+  id         String    @id @default(uuid())
+  User       User      @relation(fields: [user_id], references: [id])
+  user_id    String
+  token      String
+  expires_at DateTime
+  revoked_at DateTime?
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+
+  @@map("opts")
+}
+
+model ResetPassword {
+  id         String    @id @default(uuid())
+  User       User      @relation(fields: [user_id], references: [id])
+  user_id    String
+  token      String
+  expires_at DateTime
+  revoked_at DateTime?
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+
+  @@map("reset_passwords")
+}
+
+model Pet {
+  id         String     @id @default(uuid())
+  name       String
+  birthday   DateTime
+  breed      String
+  weight     Int
+  type       String
+  created_at DateTime   @default(now())
+  updated_at DateTime   @updatedAt
+  Posts      Post[]
+  PetColors  PetColor[]
+  Followed   Follow[]   @relation("followed")
+  Following  Follow[]   @relation("following")
+  Likes      Like[]
+  Comments   Comment[]
+
+  @@map("pets")
+}
+
+model PetColor {
+  id     String @id @default(uuid())
+  Pet    Pet    @relation(fields: [pet_id], references: [id])
+  pet_id String
+  color  String
+
+  @@map("pet_colors")
+}
+
+model Follow {
+  followed     Pet    @relation("followed", fields: [followed_id], references: [id])
+  followed_id  String
+  following    Pet    @relation("following", fields: [following_id], references: [id])
+  following_id String
+
+  @@id([followed_id, following_id])
+  @@unique([followed_id, following_id])
+  @@map("follows")
+}
+
+model Post {
+  id         String      @id @default(uuid())
+  Pet        Pet         @relation(fields: [pet_id], references: [id])
+  pet_id     String
+  caption    String
+  created_at DateTime    @default(now())
+  updated_at DateTime    @updatedAt
+  PostImages PostImage[]
+  Likes      Like[]
+  Comments   Comment[]
+
+  @@map("posts")
+}
+
+model PostImage {
+  id      String @id @default(uuid())
+  Post    Post   @relation(fields: [post_id], references: [id])
+  post_id String
+  url     String
+
+  @@map("post_images")
+}
+
+model Like {
+  id      String @id @default(uuid())
+  Pet     Pet    @relation(fields: [pet_id], references: [id])
+  Post    Post   @relation(fields: [post_id], references: [id])
+  pet_id  String
+  post_id String
+
+  @@unique([pet_id, post_id])
+  @@map("likes")
+}
+
+model Comment {
+  id      String @id @default(uuid())
+  content String
+  Pet     Pet    @relation(fields: [pet_id], references: [id])
+  Post    Post   @relation(fields: [post_id], references: [id])
+  pet_id  String
+  post_id String
+
+  @@map("comments")
+}
