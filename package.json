@@ -1,0 +1,14 @@
+{
+  "name": "backend-petz",
+  "version": "1.0.0",
+  "description": "Backend for Petz Social Media Web App",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "commit": "gitmoji -c"
+  },
+  "keywords": [],
+  "author": "@migueldev__",
+  "license": "ISC",
+  "packageManager": "pnpm@10.18.1"
+}
