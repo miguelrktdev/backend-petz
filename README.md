@@ -65,8 +65,8 @@ src
 ├── shared
 │   ├── middlewares
 │   ├── errors
-│   └── utils
-├── routes
+│   └── lib
+├── routes.ts
 ├── app.ts
 └── server.ts
 ```
