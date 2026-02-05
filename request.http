@@ -1,0 +1,2 @@
+### Hello world
+GET http://localhost:3333/api/hello HTTP/1.1

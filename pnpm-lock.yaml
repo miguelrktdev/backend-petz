@@ -17,6 +17,9 @@ importers:
       dotenv:
         specifier: ^17.2.3
         version: 17.2.3
+      http-status-codes:
+        specifier: ^2.3.0
+        version: 2.3.0
       pg:
         specifier: ^8.18.0
         version: 8.18.0
