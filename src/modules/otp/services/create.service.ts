@@ -21,7 +21,7 @@ export class CreateService {
 		}
 
 		const otpPayload: OTPCreateInput = {
-			token: Math.floor(10000 + Math.random() * 90000).toString(),
+			token: Math.floor(100000 + Math.random() * 900000).toString(),
 			expires_at: dayjs().add(15, "minutes").toDate(),
 			User: {
 				connect: {
