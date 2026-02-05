@@ -57,7 +57,7 @@ export class RegisterService {
 		})
 
 		await this.sendEmail.handle({
-			from: env.EMAIL_USER,
+			from: `Suporte Petz Social Media <${env.EMAIL_USER}>`,
 			to: user.email,
 			subject: "Verifique seu e-mail",
 			text: "Verifique seu e-mail",
