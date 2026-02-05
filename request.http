@@ -1,2 +1,14 @@
 ### Hello world
 GET http://localhost:3333/api/hello HTTP/1.1
+
+### Register user
+POST http://localhost:3333/api/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Kojovo",
+    "username": "kojovo5947",
+    "email": "kojovo5947@hopesx.com",
+    "password": "Kojovo5947@",
+    "bio": "Essa é a bio do Kojovo."
+}

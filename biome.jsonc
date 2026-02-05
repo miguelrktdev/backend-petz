@@ -10,5 +10,12 @@
 			"semicolons": "asNeeded",
 			"quoteStyle": "double"
 		}
+	},
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "off"
+			}
+		}
 	}
 }

@@ -1,3 +1,4 @@
+import { userRouter } from "@/modules/users/user.routes.ts"
 import { Router } from "express"
 
 export const routes = Router()
@@ -7,3 +8,5 @@ routes.get("/hello", (_req, res) => {
 		message: "Hello world",
 	})
 })
+
+routes.use("/users", userRouter)

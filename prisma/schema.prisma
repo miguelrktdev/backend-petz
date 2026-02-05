@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../generated/prisma"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -16,8 +16,8 @@ datasource db {
 model User {
   id             String          @id @default(uuid())
   name           String
-  username       String
-  email          String
+  username       String          @unique
+  email          String          @unique
   password_hash  String
   bio            String?
   profile_pic    String?
@@ -34,7 +34,7 @@ model OTP {
   id         String    @id @default(uuid())
   User       User      @relation(fields: [user_id], references: [id])
   user_id    String
-  token      String
+  token      String    @unique
   expires_at DateTime
   revoked_at DateTime?
   created_at DateTime  @default(now())
@@ -47,7 +47,7 @@ model ResetPassword {
   id         String    @id @default(uuid())
   User       User      @relation(fields: [user_id], references: [id])
   user_id    String
-  token      String
+  token      String    @unique
   expires_at DateTime
   revoked_at DateTime?
   created_at DateTime  @default(now())
