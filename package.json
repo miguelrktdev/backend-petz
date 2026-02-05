@@ -8,9 +8,9 @@
 		"commit": "gitmoji -c",
 		"check": "ultracite check",
 		"fix": "ultracite fix",
-    "dev": "tsx watch ./src/server.ts",
-    "build": "tsup src --out-dir dist",
-    "start": "node --watch ./dist/server.js"
+		"dev": "tsx watch ./src/server.ts",
+		"build": "tsup src --out-dir dist",
+		"start": "node --watch ./dist/server.js"
 	},
 	"keywords": [],
 	"author": "@migueldev__",
@@ -19,6 +19,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.3.13",
 		"@types/node": "^25.2.0",
+		"@types/nodemailer": "^7.0.9",
 		"@types/pg": "^8.16.0",
 		"prisma": "^7.3.0",
 		"tsup": "^8.5.1",
@@ -28,8 +29,11 @@
 	"dependencies": {
 		"@prisma/adapter-pg": "^7.3.0",
 		"@prisma/client": "^7.3.0",
+		"bcryptjs": "^3.0.3",
+		"dayjs": "^1.11.19",
 		"dotenv": "^17.2.3",
 		"http-status-codes": "^2.3.0",
+		"nodemailer": "^8.0.0",
 		"pg": "^8.18.0"
 	}
 }
