@@ -29,3 +29,12 @@ Content-Type: application/json
     "email": "babehas183@hopesx.com",
     "password": "Babehas183@"
 }
+
+
+### Verify OTP
+POST http://localhost:3333/api/auth/verify-otp HTTP/1.1
+Content-Type: application/json
+
+{
+    "code": "812697"
+}

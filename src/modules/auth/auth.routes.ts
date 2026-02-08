@@ -1,9 +1,11 @@
 import { Router } from "express"
 import { userAuthenticateController } from "./auth.controller.ts"
+import { OTPVerifyController } from "../otp/otp.controller.ts"
 
 export const authRoutes = Router()
 
 authRoutes.post("/login", userAuthenticateController)
+authRoutes.post("/verify-otp", OTPVerifyController)
 
 // test get cookie
 authRoutes.get("/test-cookies", async (req, res) => {
