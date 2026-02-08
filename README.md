@@ -46,8 +46,8 @@ O Petz Social Media permite que usuários criem perfis para seus pets, publiquem
 * **TypeScript**
 * **JWT** (autenticação)
 * **Vitest** (testes)
-* **PostgreSQL** (ou outro banco relacional)
-* **Prisma / Sequelize / Knex** (opcional)
+* **PostgreSQL** 
+* **Prisma**
 
 ---
 
@@ -62,6 +62,7 @@ src
 │   ├── comments
 │   ├── likes
 │   └── auth
+    └── otp
 ├── shared
 │   ├── middlewares
 │   ├── errors
@@ -91,6 +92,7 @@ Authorization: Bearer <token>
 
 ```http
 POST   /users
+POST   /users/upload-avatar
 GET    /users/:id
 PUT    /users/:id
 DELETE /users/:id

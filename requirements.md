@@ -70,6 +70,7 @@
 
      - [ x ] POST   /users
      - [ ] GET    /users/:id
+     - [ ] POST   /users/upload-avatar
      - [ ] PUT    /users/:id
      - [ ] DELETE /users/:id
      - [ ] POST /users/:userId/pets
