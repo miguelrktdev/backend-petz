@@ -1201,6 +1201,7 @@ export const UserScalarFieldEnum = {
   bio: 'bio',
   profile_pic: 'profile_pic',
   profile_pic_id: 'profile_pic_id',
+  email_verified_at: 'email_verified_at',
   created_at: 'created_at',
   updated_at: 'updated_at'
 } as const

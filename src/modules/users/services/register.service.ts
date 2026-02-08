@@ -4,7 +4,7 @@ import type { CreateService } from "@/modules/otp/services/create.service.ts"
 import { UserAlreadyExistsError } from "@/shared/errors/user-already-exists.error.ts"
 import type { SendEmail } from "@/shared/mail/send-email.ts"
 import { otpVerificationEmailTemplate } from "@/shared/mail/templates/otp-verification-email.ts"
-import { hash } from "bcryptjs"
+import bcrypt from "bcryptjs"
 import type { PrismaUserRepository } from "../prisma-user.repository.ts"
 
 interface RegisterServiceRequest {
@@ -35,7 +35,7 @@ export class RegisterService {
 			throw new UserAlreadyExistsError()
 		}
 
-		const password_hash = await hash(password, 6)
+		const password_hash = await bcrypt.hash(password, 6)
 
 		const userPayload = {
 			name,
