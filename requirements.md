@@ -2,7 +2,7 @@
 
 ## Requisitos funcionais
 
-- [ ] Permitir que o usuário se cadastre informando nome, nome de usuário, e-mail, biografia (bio) e senha;
+- [ x ] Permitir que o usuário se cadastre informando nome, nome de usuário, e-mail, biografia (bio) e senha;
 - [ ] Permitir que o usuário faça login utilizando e-mail e senha;
 - [ ] Permitir que o usuário faça logout do sistema;
 - [ ] Permitir que o usuário crie, edite e exclua o próprio perfil;
@@ -25,7 +25,7 @@
 
 ## Regras de negócios
 
-- [ ] Um usuário não pode se cadastrar usando email ou nome de usuário já existentes;
+- [ x ] Um usuário não pode se cadastrar usando email ou nome de usuário já existentes;
 - [ ] Um usuário pode possuir um ou mais perfis de pets;
 - [ ] Cada perfil de pet deve estar vinculado a apenas um usuário;
 - [ ] Apenas o dono do perfil do pet pode editá-lo ou excluí-lo;
@@ -47,9 +47,9 @@
 
 ## Requisitos não funcionais
 
-- [ ] O sistema deve ser desenvolvido utilizando arquitetura REST;
-- [ ] O backend deve ser implementado em Node.js;
-- [ ] O banco de dados deve ser relacional (MySQL ou PostgreSQL);
+- [ x ] O sistema deve ser desenvolvido utilizando arquitetura REST;
+- [ x ] O backend deve ser implementado em Node.js;
+- [ x ] O banco de dados deve ser relacional (MySQL ou PostgreSQL);
 - [ ] O sistema deve utilizar autenticação baseada em JWT e Refresh Token;
 - [ ] As senhas dos usuários devem ser armazenadas de forma criptografada;
 - [ ] O sistema deve proteger rotas privadas contra acesso não autorizado;
@@ -68,7 +68,7 @@
 
  ## User
 
-     - [ ] POST   /users
+     - [ x ] POST   /users
      - [ ] GET    /users/:id
      - [ ] PUT    /users/:id
      - [ ] DELETE /users/:id
