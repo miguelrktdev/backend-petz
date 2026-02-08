@@ -3,7 +3,7 @@
 ## Requisitos funcionais
 
 - [ x ] Permitir que o usuário se cadastre informando nome, nome de usuário, e-mail, biografia (bio) e senha;
-- [ ] Permitir que o usuário faça login utilizando e-mail e senha;
+- [ x ] Permitir que o usuário faça login utilizando e-mail e senha;
 - [ ] Permitir que o usuário faça logout do sistema;
 - [ ] Permitir que o usuário crie, edite e exclua o próprio perfil;
 - [ ] Permitir que o usuário crie um ou mais perfis de pets vinculados à sua conta;
@@ -50,8 +50,8 @@
 - [ x ] O sistema deve ser desenvolvido utilizando arquitetura REST;
 - [ x ] O backend deve ser implementado em Node.js;
 - [ x ] O banco de dados deve ser relacional (MySQL ou PostgreSQL);
-- [ ] O sistema deve utilizar autenticação baseada em JWT e Refresh Token;
-- [ ] As senhas dos usuários devem ser armazenadas de forma criptografada;
+- [ x ] O sistema deve utilizar autenticação baseada em JWT e Refresh Token;
+- [ x ] As senhas dos usuários devem ser armazenadas de forma criptografada;
 - [ ] O sistema deve proteger rotas privadas contra acesso não autorizado;
 - [ ] O upload de imagens deve possuir limite de tamanho;
 - [ ] O tempo de resposta das requisições deve ser inferior a um limite aceitável;
@@ -111,7 +111,7 @@
 
 ## Auth
 
-    - [ ] POST /auth/login
+    - [ x ] POST /auth/login
     - [ ] POST /auth/logout
     - [ ] POST /auth/forgot-password
     - [ ] POST /auth/reset-password

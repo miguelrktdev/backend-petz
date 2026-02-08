@@ -10,4 +10,19 @@ export class PrismaOTPRepository implements OTPRepository {
 		})
 		return otp
 	}
+	async findByCode(code: string): Promise<OTP | null> {
+		const otp = await prisma.oTP.findUnique({
+			where: {
+				token: code,
+			},
+		})
+		return otp
+	}
+	async delete(id: string): Promise<void> {
+		await prisma.oTP.delete({
+			where: {
+				id,
+			},
+		})
+	}
 }
