@@ -18,6 +18,7 @@ export const userRegisterController = async (req: Request, res: Response, next: 
 		await registerService.handle(data)
 		res.status(StatusCodes.CREATED).json({ message: "Por favor, verifique seu e-mail para confirmar o cadastro." })
 	} catch (error) {
+		console.error(error)
 		if (error instanceof UserAlreadyExistsError) {
 			return res.status(StatusCodes.CONFLICT).json({ message: error.message })
 		}
