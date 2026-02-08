@@ -17,5 +17,12 @@
 				"organizeImports": "off"
 			}
 		}
+	},
+	"linter": {
+		"rules": {
+			"suspicious": {
+				"noExplicitAny": "off"
+			}
+		}
 	}
 }

@@ -6,9 +6,26 @@ POST http://localhost:3333/api/users/register HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Kojovo",
-    "username": "kojovo5947",
-    "email": "kojovo5947@hopesx.com",
-    "password": "Kojovo5947@",
-    "bio": "Essa é a bio do Kojovo."
+    "name": "babehas",
+    "username": "babehas183",
+    "email": "babehas183@hopesx.com",
+    "password": "Babehas183@",
+    "bio": "Essa é a bio da babehas183."
+}
+
+
+### Get cookie
+GET http://localhost:3333/api/auth/test-cookies HTTP/1.1
+
+### Clear cookie
+GET http://localhost:3333/api/auth/clear-cookies HTTP/1.1
+
+
+### Login user
+POST http://localhost:3333/api/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "babehas183@hopesx.com",
+    "password": "Babehas183@"
 }
