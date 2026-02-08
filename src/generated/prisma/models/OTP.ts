@@ -403,10 +403,6 @@ export type OTPUncheckedUpdateManyWithoutUserNestedInput = {
   deleteMany?: Prisma.OTPScalarWhereInput | Prisma.OTPScalarWhereInput[]
 }
 
-export type NullableDateTimeFieldUpdateOperationsInput = {
-  set?: Date | string | null
-}
-
 export type OTPCreateWithoutUserInput = {
   id?: string
   token: string

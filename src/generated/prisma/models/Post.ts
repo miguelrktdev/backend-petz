@@ -182,10 +182,10 @@ export type PostWhereInput = {
   caption?: Prisma.StringFilter<"Post"> | string
   created_at?: Prisma.DateTimeFilter<"Post"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"Post"> | Date | string
-  Pet?: Prisma.XOR<Prisma.PetScalarRelationFilter, Prisma.PetWhereInput>
-  PostImages?: Prisma.PostImageListRelationFilter
-  Likes?: Prisma.LikeListRelationFilter
   Comments?: Prisma.CommentListRelationFilter
+  Likes?: Prisma.LikeListRelationFilter
+  PostImages?: Prisma.PostImageListRelationFilter
+  Pet?: Prisma.XOR<Prisma.PetScalarRelationFilter, Prisma.PetWhereInput>
 }
 
 export type PostOrderByWithRelationInput = {
@@ -194,10 +194,10 @@ export type PostOrderByWithRelationInput = {
   caption?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
-  Pet?: Prisma.PetOrderByWithRelationInput
-  PostImages?: Prisma.PostImageOrderByRelationAggregateInput
-  Likes?: Prisma.LikeOrderByRelationAggregateInput
   Comments?: Prisma.CommentOrderByRelationAggregateInput
+  Likes?: Prisma.LikeOrderByRelationAggregateInput
+  PostImages?: Prisma.PostImageOrderByRelationAggregateInput
+  Pet?: Prisma.PetOrderByWithRelationInput
 }
 
 export type PostWhereUniqueInput = Prisma.AtLeast<{
@@ -209,10 +209,10 @@ export type PostWhereUniqueInput = Prisma.AtLeast<{
   caption?: Prisma.StringFilter<"Post"> | string
   created_at?: Prisma.DateTimeFilter<"Post"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"Post"> | Date | string
-  Pet?: Prisma.XOR<Prisma.PetScalarRelationFilter, Prisma.PetWhereInput>
-  PostImages?: Prisma.PostImageListRelationFilter
-  Likes?: Prisma.LikeListRelationFilter
   Comments?: Prisma.CommentListRelationFilter
+  Likes?: Prisma.LikeListRelationFilter
+  PostImages?: Prisma.PostImageListRelationFilter
+  Pet?: Prisma.XOR<Prisma.PetScalarRelationFilter, Prisma.PetWhereInput>
 }, "id">
 
 export type PostOrderByWithAggregationInput = {
@@ -242,10 +242,10 @@ export type PostCreateInput = {
   caption: string
   created_at?: Date | string
   updated_at?: Date | string
-  Pet: Prisma.PetCreateNestedOneWithoutPostsInput
-  PostImages?: Prisma.PostImageCreateNestedManyWithoutPostInput
-  Likes?: Prisma.LikeCreateNestedManyWithoutPostInput
   Comments?: Prisma.CommentCreateNestedManyWithoutPostInput
+  Likes?: Prisma.LikeCreateNestedManyWithoutPostInput
+  PostImages?: Prisma.PostImageCreateNestedManyWithoutPostInput
+  Pet: Prisma.PetCreateNestedOneWithoutPostsInput
 }
 
 export type PostUncheckedCreateInput = {
@@ -254,9 +254,9 @@ export type PostUncheckedCreateInput = {
   caption: string
   created_at?: Date | string
   updated_at?: Date | string
-  PostImages?: Prisma.PostImageUncheckedCreateNestedManyWithoutPostInput
-  Likes?: Prisma.LikeUncheckedCreateNestedManyWithoutPostInput
   Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPostInput
+  Likes?: Prisma.LikeUncheckedCreateNestedManyWithoutPostInput
+  PostImages?: Prisma.PostImageUncheckedCreateNestedManyWithoutPostInput
 }
 
 export type PostUpdateInput = {
@@ -264,10 +264,10 @@ export type PostUpdateInput = {
   caption?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Pet?: Prisma.PetUpdateOneRequiredWithoutPostsNestedInput
-  PostImages?: Prisma.PostImageUpdateManyWithoutPostNestedInput
-  Likes?: Prisma.LikeUpdateManyWithoutPostNestedInput
   Comments?: Prisma.CommentUpdateManyWithoutPostNestedInput
+  Likes?: Prisma.LikeUpdateManyWithoutPostNestedInput
+  PostImages?: Prisma.PostImageUpdateManyWithoutPostNestedInput
+  Pet?: Prisma.PetUpdateOneRequiredWithoutPostsNestedInput
 }
 
 export type PostUncheckedUpdateInput = {
@@ -276,9 +276,9 @@ export type PostUncheckedUpdateInput = {
   caption?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  PostImages?: Prisma.PostImageUncheckedUpdateManyWithoutPostNestedInput
-  Likes?: Prisma.LikeUncheckedUpdateManyWithoutPostNestedInput
   Comments?: Prisma.CommentUncheckedUpdateManyWithoutPostNestedInput
+  Likes?: Prisma.LikeUncheckedUpdateManyWithoutPostNestedInput
+  PostImages?: Prisma.PostImageUncheckedUpdateManyWithoutPostNestedInput
 }
 
 export type PostCreateManyInput = {
@@ -432,9 +432,9 @@ export type PostCreateWithoutPetInput = {
   caption: string
   created_at?: Date | string
   updated_at?: Date | string
-  PostImages?: Prisma.PostImageCreateNestedManyWithoutPostInput
-  Likes?: Prisma.LikeCreateNestedManyWithoutPostInput
   Comments?: Prisma.CommentCreateNestedManyWithoutPostInput
+  Likes?: Prisma.LikeCreateNestedManyWithoutPostInput
+  PostImages?: Prisma.PostImageCreateNestedManyWithoutPostInput
 }
 
 export type PostUncheckedCreateWithoutPetInput = {
@@ -442,9 +442,9 @@ export type PostUncheckedCreateWithoutPetInput = {
   caption: string
   created_at?: Date | string
   updated_at?: Date | string
-  PostImages?: Prisma.PostImageUncheckedCreateNestedManyWithoutPostInput
-  Likes?: Prisma.LikeUncheckedCreateNestedManyWithoutPostInput
   Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPostInput
+  Likes?: Prisma.LikeUncheckedCreateNestedManyWithoutPostInput
+  PostImages?: Prisma.PostImageUncheckedCreateNestedManyWithoutPostInput
 }
 
 export type PostCreateOrConnectWithoutPetInput = {
@@ -489,9 +489,9 @@ export type PostCreateWithoutPostImagesInput = {
   caption: string
   created_at?: Date | string
   updated_at?: Date | string
-  Pet: Prisma.PetCreateNestedOneWithoutPostsInput
-  Likes?: Prisma.LikeCreateNestedManyWithoutPostInput
   Comments?: Prisma.CommentCreateNestedManyWithoutPostInput
+  Likes?: Prisma.LikeCreateNestedManyWithoutPostInput
+  Pet: Prisma.PetCreateNestedOneWithoutPostsInput
 }
 
 export type PostUncheckedCreateWithoutPostImagesInput = {
@@ -500,8 +500,8 @@ export type PostUncheckedCreateWithoutPostImagesInput = {
   caption: string
   created_at?: Date | string
   updated_at?: Date | string
-  Likes?: Prisma.LikeUncheckedCreateNestedManyWithoutPostInput
   Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPostInput
+  Likes?: Prisma.LikeUncheckedCreateNestedManyWithoutPostInput
 }
 
 export type PostCreateOrConnectWithoutPostImagesInput = {
@@ -525,9 +525,9 @@ export type PostUpdateWithoutPostImagesInput = {
   caption?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Pet?: Prisma.PetUpdateOneRequiredWithoutPostsNestedInput
-  Likes?: Prisma.LikeUpdateManyWithoutPostNestedInput
   Comments?: Prisma.CommentUpdateManyWithoutPostNestedInput
+  Likes?: Prisma.LikeUpdateManyWithoutPostNestedInput
+  Pet?: Prisma.PetUpdateOneRequiredWithoutPostsNestedInput
 }
 
 export type PostUncheckedUpdateWithoutPostImagesInput = {
@@ -536,8 +536,8 @@ export type PostUncheckedUpdateWithoutPostImagesInput = {
   caption?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Likes?: Prisma.LikeUncheckedUpdateManyWithoutPostNestedInput
   Comments?: Prisma.CommentUncheckedUpdateManyWithoutPostNestedInput
+  Likes?: Prisma.LikeUncheckedUpdateManyWithoutPostNestedInput
 }
 
 export type PostCreateWithoutLikesInput = {
@@ -545,9 +545,9 @@ export type PostCreateWithoutLikesInput = {
   caption: string
   created_at?: Date | string
   updated_at?: Date | string
-  Pet: Prisma.PetCreateNestedOneWithoutPostsInput
-  PostImages?: Prisma.PostImageCreateNestedManyWithoutPostInput
   Comments?: Prisma.CommentCreateNestedManyWithoutPostInput
+  PostImages?: Prisma.PostImageCreateNestedManyWithoutPostInput
+  Pet: Prisma.PetCreateNestedOneWithoutPostsInput
 }
 
 export type PostUncheckedCreateWithoutLikesInput = {
@@ -556,8 +556,8 @@ export type PostUncheckedCreateWithoutLikesInput = {
   caption: string
   created_at?: Date | string
   updated_at?: Date | string
-  PostImages?: Prisma.PostImageUncheckedCreateNestedManyWithoutPostInput
   Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPostInput
+  PostImages?: Prisma.PostImageUncheckedCreateNestedManyWithoutPostInput
 }
 
 export type PostCreateOrConnectWithoutLikesInput = {
@@ -581,9 +581,9 @@ export type PostUpdateWithoutLikesInput = {
   caption?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Pet?: Prisma.PetUpdateOneRequiredWithoutPostsNestedInput
-  PostImages?: Prisma.PostImageUpdateManyWithoutPostNestedInput
   Comments?: Prisma.CommentUpdateManyWithoutPostNestedInput
+  PostImages?: Prisma.PostImageUpdateManyWithoutPostNestedInput
+  Pet?: Prisma.PetUpdateOneRequiredWithoutPostsNestedInput
 }
 
 export type PostUncheckedUpdateWithoutLikesInput = {
@@ -592,8 +592,8 @@ export type PostUncheckedUpdateWithoutLikesInput = {
   caption?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  PostImages?: Prisma.PostImageUncheckedUpdateManyWithoutPostNestedInput
   Comments?: Prisma.CommentUncheckedUpdateManyWithoutPostNestedInput
+  PostImages?: Prisma.PostImageUncheckedUpdateManyWithoutPostNestedInput
 }
 
 export type PostCreateWithoutCommentsInput = {
@@ -601,9 +601,9 @@ export type PostCreateWithoutCommentsInput = {
   caption: string
   created_at?: Date | string
   updated_at?: Date | string
-  Pet: Prisma.PetCreateNestedOneWithoutPostsInput
-  PostImages?: Prisma.PostImageCreateNestedManyWithoutPostInput
   Likes?: Prisma.LikeCreateNestedManyWithoutPostInput
+  PostImages?: Prisma.PostImageCreateNestedManyWithoutPostInput
+  Pet: Prisma.PetCreateNestedOneWithoutPostsInput
 }
 
 export type PostUncheckedCreateWithoutCommentsInput = {
@@ -612,8 +612,8 @@ export type PostUncheckedCreateWithoutCommentsInput = {
   caption: string
   created_at?: Date | string
   updated_at?: Date | string
-  PostImages?: Prisma.PostImageUncheckedCreateNestedManyWithoutPostInput
   Likes?: Prisma.LikeUncheckedCreateNestedManyWithoutPostInput
+  PostImages?: Prisma.PostImageUncheckedCreateNestedManyWithoutPostInput
 }
 
 export type PostCreateOrConnectWithoutCommentsInput = {
@@ -637,9 +637,9 @@ export type PostUpdateWithoutCommentsInput = {
   caption?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Pet?: Prisma.PetUpdateOneRequiredWithoutPostsNestedInput
-  PostImages?: Prisma.PostImageUpdateManyWithoutPostNestedInput
   Likes?: Prisma.LikeUpdateManyWithoutPostNestedInput
+  PostImages?: Prisma.PostImageUpdateManyWithoutPostNestedInput
+  Pet?: Prisma.PetUpdateOneRequiredWithoutPostsNestedInput
 }
 
 export type PostUncheckedUpdateWithoutCommentsInput = {
@@ -648,8 +648,8 @@ export type PostUncheckedUpdateWithoutCommentsInput = {
   caption?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  PostImages?: Prisma.PostImageUncheckedUpdateManyWithoutPostNestedInput
   Likes?: Prisma.LikeUncheckedUpdateManyWithoutPostNestedInput
+  PostImages?: Prisma.PostImageUncheckedUpdateManyWithoutPostNestedInput
 }
 
 export type PostCreateManyPetInput = {
@@ -664,9 +664,9 @@ export type PostUpdateWithoutPetInput = {
   caption?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  PostImages?: Prisma.PostImageUpdateManyWithoutPostNestedInput
-  Likes?: Prisma.LikeUpdateManyWithoutPostNestedInput
   Comments?: Prisma.CommentUpdateManyWithoutPostNestedInput
+  Likes?: Prisma.LikeUpdateManyWithoutPostNestedInput
+  PostImages?: Prisma.PostImageUpdateManyWithoutPostNestedInput
 }
 
 export type PostUncheckedUpdateWithoutPetInput = {
@@ -674,9 +674,9 @@ export type PostUncheckedUpdateWithoutPetInput = {
   caption?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  PostImages?: Prisma.PostImageUncheckedUpdateManyWithoutPostNestedInput
-  Likes?: Prisma.LikeUncheckedUpdateManyWithoutPostNestedInput
   Comments?: Prisma.CommentUncheckedUpdateManyWithoutPostNestedInput
+  Likes?: Prisma.LikeUncheckedUpdateManyWithoutPostNestedInput
+  PostImages?: Prisma.PostImageUncheckedUpdateManyWithoutPostNestedInput
 }
 
 export type PostUncheckedUpdateManyWithoutPetInput = {
@@ -692,15 +692,15 @@ export type PostUncheckedUpdateManyWithoutPetInput = {
  */
 
 export type PostCountOutputType = {
-  PostImages: number
-  Likes: number
   Comments: number
+  Likes: number
+  PostImages: number
 }
 
 export type PostCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  PostImages?: boolean | PostCountOutputTypeCountPostImagesArgs
-  Likes?: boolean | PostCountOutputTypeCountLikesArgs
   Comments?: boolean | PostCountOutputTypeCountCommentsArgs
+  Likes?: boolean | PostCountOutputTypeCountLikesArgs
+  PostImages?: boolean | PostCountOutputTypeCountPostImagesArgs
 }
 
 /**
@@ -716,8 +716,8 @@ export type PostCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensi
 /**
  * PostCountOutputType without action
  */
-export type PostCountOutputTypeCountPostImagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PostImageWhereInput
+export type PostCountOutputTypeCountCommentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CommentWhereInput
 }
 
 /**
@@ -730,8 +730,8 @@ export type PostCountOutputTypeCountLikesArgs<ExtArgs extends runtime.Types.Exte
 /**
  * PostCountOutputType without action
  */
-export type PostCountOutputTypeCountCommentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.CommentWhereInput
+export type PostCountOutputTypeCountPostImagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PostImageWhereInput
 }
 
 
@@ -741,10 +741,10 @@ export type PostSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   caption?: boolean
   created_at?: boolean
   updated_at?: boolean
-  Pet?: boolean | Prisma.PetDefaultArgs<ExtArgs>
-  PostImages?: boolean | Prisma.Post$PostImagesArgs<ExtArgs>
-  Likes?: boolean | Prisma.Post$LikesArgs<ExtArgs>
   Comments?: boolean | Prisma.Post$CommentsArgs<ExtArgs>
+  Likes?: boolean | Prisma.Post$LikesArgs<ExtArgs>
+  PostImages?: boolean | Prisma.Post$PostImagesArgs<ExtArgs>
+  Pet?: boolean | Prisma.PetDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.PostCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["post"]>
 
@@ -776,10 +776,10 @@ export type PostSelectScalar = {
 
 export type PostOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "pet_id" | "caption" | "created_at" | "updated_at", ExtArgs["result"]["post"]>
 export type PostInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  Pet?: boolean | Prisma.PetDefaultArgs<ExtArgs>
-  PostImages?: boolean | Prisma.Post$PostImagesArgs<ExtArgs>
-  Likes?: boolean | Prisma.Post$LikesArgs<ExtArgs>
   Comments?: boolean | Prisma.Post$CommentsArgs<ExtArgs>
+  Likes?: boolean | Prisma.Post$LikesArgs<ExtArgs>
+  PostImages?: boolean | Prisma.Post$PostImagesArgs<ExtArgs>
+  Pet?: boolean | Prisma.PetDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.PostCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type PostIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -792,10 +792,10 @@ export type PostIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 export type $PostPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Post"
   objects: {
-    Pet: Prisma.$PetPayload<ExtArgs>
-    PostImages: Prisma.$PostImagePayload<ExtArgs>[]
-    Likes: Prisma.$LikePayload<ExtArgs>[]
     Comments: Prisma.$CommentPayload<ExtArgs>[]
+    Likes: Prisma.$LikePayload<ExtArgs>[]
+    PostImages: Prisma.$PostImagePayload<ExtArgs>[]
+    Pet: Prisma.$PetPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1197,10 +1197,10 @@ readonly fields: PostFieldRefs;
  */
 export interface Prisma__PostClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  Pet<T extends Prisma.PetDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PetDefaultArgs<ExtArgs>>): Prisma.Prisma__PetClient<runtime.Types.Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  PostImages<T extends Prisma.Post$PostImagesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Post$PostImagesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  Likes<T extends Prisma.Post$LikesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Post$LikesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   Comments<T extends Prisma.Post$CommentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Post$CommentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CommentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  Likes<T extends Prisma.Post$LikesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Post$LikesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  PostImages<T extends Prisma.Post$PostImagesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Post$PostImagesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  Pet<T extends Prisma.PetDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PetDefaultArgs<ExtArgs>>): Prisma.Prisma__PetClient<runtime.Types.Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1631,27 +1631,27 @@ export type PostDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
 }
 
 /**
- * Post.PostImages
+ * Post.Comments
  */
-export type Post$PostImagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Post$CommentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PostImage
+   * Select specific fields to fetch from the Comment
    */
-  select?: Prisma.PostImageSelect<ExtArgs> | null
+  select?: Prisma.CommentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PostImage
+   * Omit specific fields from the Comment
    */
-  omit?: Prisma.PostImageOmit<ExtArgs> | null
+  omit?: Prisma.CommentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PostImageInclude<ExtArgs> | null
-  where?: Prisma.PostImageWhereInput
-  orderBy?: Prisma.PostImageOrderByWithRelationInput | Prisma.PostImageOrderByWithRelationInput[]
-  cursor?: Prisma.PostImageWhereUniqueInput
+  include?: Prisma.CommentInclude<ExtArgs> | null
+  where?: Prisma.CommentWhereInput
+  orderBy?: Prisma.CommentOrderByWithRelationInput | Prisma.CommentOrderByWithRelationInput[]
+  cursor?: Prisma.CommentWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.PostImageScalarFieldEnum | Prisma.PostImageScalarFieldEnum[]
+  distinct?: Prisma.CommentScalarFieldEnum | Prisma.CommentScalarFieldEnum[]
 }
 
 /**
@@ -1679,27 +1679,27 @@ export type Post$LikesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs
 }
 
 /**
- * Post.Comments
+ * Post.PostImages
  */
-export type Post$CommentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Post$PostImagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Comment
+   * Select specific fields to fetch from the PostImage
    */
-  select?: Prisma.CommentSelect<ExtArgs> | null
+  select?: Prisma.PostImageSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Comment
+   * Omit specific fields from the PostImage
    */
-  omit?: Prisma.CommentOmit<ExtArgs> | null
+  omit?: Prisma.PostImageOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CommentInclude<ExtArgs> | null
-  where?: Prisma.CommentWhereInput
-  orderBy?: Prisma.CommentOrderByWithRelationInput | Prisma.CommentOrderByWithRelationInput[]
-  cursor?: Prisma.CommentWhereUniqueInput
+  include?: Prisma.PostImageInclude<ExtArgs> | null
+  where?: Prisma.PostImageWhereInput
+  orderBy?: Prisma.PostImageOrderByWithRelationInput | Prisma.PostImageOrderByWithRelationInput[]
+  cursor?: Prisma.PostImageWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.CommentScalarFieldEnum | Prisma.CommentScalarFieldEnum[]
+  distinct?: Prisma.PostImageScalarFieldEnum | Prisma.PostImageScalarFieldEnum[]
 }
 
 /**

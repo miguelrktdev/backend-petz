@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma"
@@ -14,44 +8,45 @@ datasource db {
 }
 
 model User {
-  id             String          @id @default(uuid())
-  name           String
-  username       String          @unique
-  email          String          @unique
-  password_hash  String
-  bio            String?
-  profile_pic    String?
-  profile_pic_id String?
-  created_at     DateTime        @default(now())
-  updated_at     DateTime        @updatedAt
-  Otps           OTP[]
-  ResetPasswords ResetPassword[]
+  id                String          @id @default(uuid())
+  name              String
+  username          String          @unique
+  email             String          @unique
+  password_hash     String
+  bio               String?
+  profile_pic       String?
+  profile_pic_id    String?
+  email_verified_at DateTime?
+  created_at        DateTime        @default(now())
+  updated_at        DateTime        @updatedAt
+  Otps              OTP[]
+  ResetPasswords    ResetPassword[]
 
   @@map("users")
 }
 
 model OTP {
   id         String    @id @default(uuid())
-  User       User      @relation(fields: [user_id], references: [id])
   user_id    String
   token      String    @unique
   expires_at DateTime
   revoked_at DateTime?
   created_at DateTime  @default(now())
   updated_at DateTime  @updatedAt
+  User       User      @relation(fields: [user_id], references: [id])
 
   @@map("opts")
 }
 
 model ResetPassword {
   id         String    @id @default(uuid())
-  User       User      @relation(fields: [user_id], references: [id])
   user_id    String
   token      String    @unique
   expires_at DateTime
   revoked_at DateTime?
   created_at DateTime  @default(now())
   updated_at DateTime  @updatedAt
+  User       User      @relation(fields: [user_id], references: [id])
 
   @@map("reset_passwords")
 }
@@ -65,30 +60,30 @@ model Pet {
   type       String
   created_at DateTime   @default(now())
   updated_at DateTime   @updatedAt
-  Posts      Post[]
-  PetColors  PetColor[]
+  Comments   Comment[]
   Followed   Follow[]   @relation("followed")
   Following  Follow[]   @relation("following")
   Likes      Like[]
-  Comments   Comment[]
+  PetColors  PetColor[]
+  Posts      Post[]
 
   @@map("pets")
 }
 
 model PetColor {
   id     String @id @default(uuid())
-  Pet    Pet    @relation(fields: [pet_id], references: [id])
   pet_id String
   color  String
+  Pet    Pet    @relation(fields: [pet_id], references: [id])
 
   @@map("pet_colors")
 }
 
 model Follow {
-  followed     Pet    @relation("followed", fields: [followed_id], references: [id])
   followed_id  String
-  following    Pet    @relation("following", fields: [following_id], references: [id])
   following_id String
+  followed     Pet    @relation("followed", fields: [followed_id], references: [id])
+  following    Pet    @relation("following", fields: [following_id], references: [id])
 
   @@id([followed_id, following_id])
   @@unique([followed_id, following_id])
@@ -97,33 +92,33 @@ model Follow {
 
 model Post {
   id         String      @id @default(uuid())
-  Pet        Pet         @relation(fields: [pet_id], references: [id])
   pet_id     String
   caption    String
   created_at DateTime    @default(now())
   updated_at DateTime    @updatedAt
-  PostImages PostImage[]
-  Likes      Like[]
   Comments   Comment[]
+  Likes      Like[]
+  PostImages PostImage[]
+  Pet        Pet         @relation(fields: [pet_id], references: [id])
 
   @@map("posts")
 }
 
 model PostImage {
   id      String @id @default(uuid())
-  Post    Post   @relation(fields: [post_id], references: [id])
   post_id String
   url     String
+  Post    Post   @relation(fields: [post_id], references: [id])
 
   @@map("post_images")
 }
 
 model Like {
   id      String @id @default(uuid())
-  Pet     Pet    @relation(fields: [pet_id], references: [id])
-  Post    Post   @relation(fields: [post_id], references: [id])
   pet_id  String
   post_id String
+  Pet     Pet    @relation(fields: [pet_id], references: [id])
+  Post    Post   @relation(fields: [post_id], references: [id])
 
   @@unique([pet_id, post_id])
   @@map("likes")
@@ -132,10 +127,10 @@ model Like {
 model Comment {
   id      String @id @default(uuid())
   content String
-  Pet     Pet    @relation(fields: [pet_id], references: [id])
-  Post    Post   @relation(fields: [post_id], references: [id])
   pet_id  String
   post_id String
+  Pet     Pet    @relation(fields: [pet_id], references: [id])
+  Post    Post   @relation(fields: [post_id], references: [id])
 
   @@map("comments")
 }

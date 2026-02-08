@@ -240,12 +240,12 @@ export type PetWhereInput = {
   type?: Prisma.StringFilter<"Pet"> | string
   created_at?: Prisma.DateTimeFilter<"Pet"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"Pet"> | Date | string
-  Posts?: Prisma.PostListRelationFilter
-  PetColors?: Prisma.PetColorListRelationFilter
+  Comments?: Prisma.CommentListRelationFilter
   Followed?: Prisma.FollowListRelationFilter
   Following?: Prisma.FollowListRelationFilter
   Likes?: Prisma.LikeListRelationFilter
-  Comments?: Prisma.CommentListRelationFilter
+  PetColors?: Prisma.PetColorListRelationFilter
+  Posts?: Prisma.PostListRelationFilter
 }
 
 export type PetOrderByWithRelationInput = {
@@ -257,12 +257,12 @@ export type PetOrderByWithRelationInput = {
   type?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
-  Posts?: Prisma.PostOrderByRelationAggregateInput
-  PetColors?: Prisma.PetColorOrderByRelationAggregateInput
+  Comments?: Prisma.CommentOrderByRelationAggregateInput
   Followed?: Prisma.FollowOrderByRelationAggregateInput
   Following?: Prisma.FollowOrderByRelationAggregateInput
   Likes?: Prisma.LikeOrderByRelationAggregateInput
-  Comments?: Prisma.CommentOrderByRelationAggregateInput
+  PetColors?: Prisma.PetColorOrderByRelationAggregateInput
+  Posts?: Prisma.PostOrderByRelationAggregateInput
 }
 
 export type PetWhereUniqueInput = Prisma.AtLeast<{
@@ -277,12 +277,12 @@ export type PetWhereUniqueInput = Prisma.AtLeast<{
   type?: Prisma.StringFilter<"Pet"> | string
   created_at?: Prisma.DateTimeFilter<"Pet"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"Pet"> | Date | string
-  Posts?: Prisma.PostListRelationFilter
-  PetColors?: Prisma.PetColorListRelationFilter
+  Comments?: Prisma.CommentListRelationFilter
   Followed?: Prisma.FollowListRelationFilter
   Following?: Prisma.FollowListRelationFilter
   Likes?: Prisma.LikeListRelationFilter
-  Comments?: Prisma.CommentListRelationFilter
+  PetColors?: Prisma.PetColorListRelationFilter
+  Posts?: Prisma.PostListRelationFilter
 }, "id">
 
 export type PetOrderByWithAggregationInput = {
@@ -324,12 +324,12 @@ export type PetCreateInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  Posts?: Prisma.PostCreateNestedManyWithoutPetInput
-  PetColors?: Prisma.PetColorCreateNestedManyWithoutPetInput
+  Comments?: Prisma.CommentCreateNestedManyWithoutPetInput
   Followed?: Prisma.FollowCreateNestedManyWithoutFollowedInput
   Following?: Prisma.FollowCreateNestedManyWithoutFollowingInput
   Likes?: Prisma.LikeCreateNestedManyWithoutPetInput
-  Comments?: Prisma.CommentCreateNestedManyWithoutPetInput
+  PetColors?: Prisma.PetColorCreateNestedManyWithoutPetInput
+  Posts?: Prisma.PostCreateNestedManyWithoutPetInput
 }
 
 export type PetUncheckedCreateInput = {
@@ -341,12 +341,12 @@ export type PetUncheckedCreateInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  Posts?: Prisma.PostUncheckedCreateNestedManyWithoutPetInput
-  PetColors?: Prisma.PetColorUncheckedCreateNestedManyWithoutPetInput
+  Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPetInput
   Followed?: Prisma.FollowUncheckedCreateNestedManyWithoutFollowedInput
   Following?: Prisma.FollowUncheckedCreateNestedManyWithoutFollowingInput
   Likes?: Prisma.LikeUncheckedCreateNestedManyWithoutPetInput
-  Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPetInput
+  PetColors?: Prisma.PetColorUncheckedCreateNestedManyWithoutPetInput
+  Posts?: Prisma.PostUncheckedCreateNestedManyWithoutPetInput
 }
 
 export type PetUpdateInput = {
@@ -358,12 +358,12 @@ export type PetUpdateInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Posts?: Prisma.PostUpdateManyWithoutPetNestedInput
-  PetColors?: Prisma.PetColorUpdateManyWithoutPetNestedInput
+  Comments?: Prisma.CommentUpdateManyWithoutPetNestedInput
   Followed?: Prisma.FollowUpdateManyWithoutFollowedNestedInput
   Following?: Prisma.FollowUpdateManyWithoutFollowingNestedInput
   Likes?: Prisma.LikeUpdateManyWithoutPetNestedInput
-  Comments?: Prisma.CommentUpdateManyWithoutPetNestedInput
+  PetColors?: Prisma.PetColorUpdateManyWithoutPetNestedInput
+  Posts?: Prisma.PostUpdateManyWithoutPetNestedInput
 }
 
 export type PetUncheckedUpdateInput = {
@@ -375,12 +375,12 @@ export type PetUncheckedUpdateInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Posts?: Prisma.PostUncheckedUpdateManyWithoutPetNestedInput
-  PetColors?: Prisma.PetColorUncheckedUpdateManyWithoutPetNestedInput
+  Comments?: Prisma.CommentUncheckedUpdateManyWithoutPetNestedInput
   Followed?: Prisma.FollowUncheckedUpdateManyWithoutFollowedNestedInput
   Following?: Prisma.FollowUncheckedUpdateManyWithoutFollowingNestedInput
   Likes?: Prisma.LikeUncheckedUpdateManyWithoutPetNestedInput
-  Comments?: Prisma.CommentUncheckedUpdateManyWithoutPetNestedInput
+  PetColors?: Prisma.PetColorUncheckedUpdateManyWithoutPetNestedInput
+  Posts?: Prisma.PostUncheckedUpdateManyWithoutPetNestedInput
 }
 
 export type PetCreateManyInput = {
@@ -563,11 +563,11 @@ export type PetCreateWithoutPetColorsInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  Posts?: Prisma.PostCreateNestedManyWithoutPetInput
+  Comments?: Prisma.CommentCreateNestedManyWithoutPetInput
   Followed?: Prisma.FollowCreateNestedManyWithoutFollowedInput
   Following?: Prisma.FollowCreateNestedManyWithoutFollowingInput
   Likes?: Prisma.LikeCreateNestedManyWithoutPetInput
-  Comments?: Prisma.CommentCreateNestedManyWithoutPetInput
+  Posts?: Prisma.PostCreateNestedManyWithoutPetInput
 }
 
 export type PetUncheckedCreateWithoutPetColorsInput = {
@@ -579,11 +579,11 @@ export type PetUncheckedCreateWithoutPetColorsInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  Posts?: Prisma.PostUncheckedCreateNestedManyWithoutPetInput
+  Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPetInput
   Followed?: Prisma.FollowUncheckedCreateNestedManyWithoutFollowedInput
   Following?: Prisma.FollowUncheckedCreateNestedManyWithoutFollowingInput
   Likes?: Prisma.LikeUncheckedCreateNestedManyWithoutPetInput
-  Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPetInput
+  Posts?: Prisma.PostUncheckedCreateNestedManyWithoutPetInput
 }
 
 export type PetCreateOrConnectWithoutPetColorsInput = {
@@ -611,11 +611,11 @@ export type PetUpdateWithoutPetColorsInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Posts?: Prisma.PostUpdateManyWithoutPetNestedInput
+  Comments?: Prisma.CommentUpdateManyWithoutPetNestedInput
   Followed?: Prisma.FollowUpdateManyWithoutFollowedNestedInput
   Following?: Prisma.FollowUpdateManyWithoutFollowingNestedInput
   Likes?: Prisma.LikeUpdateManyWithoutPetNestedInput
-  Comments?: Prisma.CommentUpdateManyWithoutPetNestedInput
+  Posts?: Prisma.PostUpdateManyWithoutPetNestedInput
 }
 
 export type PetUncheckedUpdateWithoutPetColorsInput = {
@@ -627,11 +627,11 @@ export type PetUncheckedUpdateWithoutPetColorsInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Posts?: Prisma.PostUncheckedUpdateManyWithoutPetNestedInput
+  Comments?: Prisma.CommentUncheckedUpdateManyWithoutPetNestedInput
   Followed?: Prisma.FollowUncheckedUpdateManyWithoutFollowedNestedInput
   Following?: Prisma.FollowUncheckedUpdateManyWithoutFollowingNestedInput
   Likes?: Prisma.LikeUncheckedUpdateManyWithoutPetNestedInput
-  Comments?: Prisma.CommentUncheckedUpdateManyWithoutPetNestedInput
+  Posts?: Prisma.PostUncheckedUpdateManyWithoutPetNestedInput
 }
 
 export type PetCreateWithoutFollowedInput = {
@@ -643,11 +643,11 @@ export type PetCreateWithoutFollowedInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  Posts?: Prisma.PostCreateNestedManyWithoutPetInput
-  PetColors?: Prisma.PetColorCreateNestedManyWithoutPetInput
+  Comments?: Prisma.CommentCreateNestedManyWithoutPetInput
   Following?: Prisma.FollowCreateNestedManyWithoutFollowingInput
   Likes?: Prisma.LikeCreateNestedManyWithoutPetInput
-  Comments?: Prisma.CommentCreateNestedManyWithoutPetInput
+  PetColors?: Prisma.PetColorCreateNestedManyWithoutPetInput
+  Posts?: Prisma.PostCreateNestedManyWithoutPetInput
 }
 
 export type PetUncheckedCreateWithoutFollowedInput = {
@@ -659,11 +659,11 @@ export type PetUncheckedCreateWithoutFollowedInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  Posts?: Prisma.PostUncheckedCreateNestedManyWithoutPetInput
-  PetColors?: Prisma.PetColorUncheckedCreateNestedManyWithoutPetInput
+  Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPetInput
   Following?: Prisma.FollowUncheckedCreateNestedManyWithoutFollowingInput
   Likes?: Prisma.LikeUncheckedCreateNestedManyWithoutPetInput
-  Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPetInput
+  PetColors?: Prisma.PetColorUncheckedCreateNestedManyWithoutPetInput
+  Posts?: Prisma.PostUncheckedCreateNestedManyWithoutPetInput
 }
 
 export type PetCreateOrConnectWithoutFollowedInput = {
@@ -680,11 +680,11 @@ export type PetCreateWithoutFollowingInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  Posts?: Prisma.PostCreateNestedManyWithoutPetInput
-  PetColors?: Prisma.PetColorCreateNestedManyWithoutPetInput
+  Comments?: Prisma.CommentCreateNestedManyWithoutPetInput
   Followed?: Prisma.FollowCreateNestedManyWithoutFollowedInput
   Likes?: Prisma.LikeCreateNestedManyWithoutPetInput
-  Comments?: Prisma.CommentCreateNestedManyWithoutPetInput
+  PetColors?: Prisma.PetColorCreateNestedManyWithoutPetInput
+  Posts?: Prisma.PostCreateNestedManyWithoutPetInput
 }
 
 export type PetUncheckedCreateWithoutFollowingInput = {
@@ -696,11 +696,11 @@ export type PetUncheckedCreateWithoutFollowingInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  Posts?: Prisma.PostUncheckedCreateNestedManyWithoutPetInput
-  PetColors?: Prisma.PetColorUncheckedCreateNestedManyWithoutPetInput
+  Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPetInput
   Followed?: Prisma.FollowUncheckedCreateNestedManyWithoutFollowedInput
   Likes?: Prisma.LikeUncheckedCreateNestedManyWithoutPetInput
-  Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPetInput
+  PetColors?: Prisma.PetColorUncheckedCreateNestedManyWithoutPetInput
+  Posts?: Prisma.PostUncheckedCreateNestedManyWithoutPetInput
 }
 
 export type PetCreateOrConnectWithoutFollowingInput = {
@@ -728,11 +728,11 @@ export type PetUpdateWithoutFollowedInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Posts?: Prisma.PostUpdateManyWithoutPetNestedInput
-  PetColors?: Prisma.PetColorUpdateManyWithoutPetNestedInput
+  Comments?: Prisma.CommentUpdateManyWithoutPetNestedInput
   Following?: Prisma.FollowUpdateManyWithoutFollowingNestedInput
   Likes?: Prisma.LikeUpdateManyWithoutPetNestedInput
-  Comments?: Prisma.CommentUpdateManyWithoutPetNestedInput
+  PetColors?: Prisma.PetColorUpdateManyWithoutPetNestedInput
+  Posts?: Prisma.PostUpdateManyWithoutPetNestedInput
 }
 
 export type PetUncheckedUpdateWithoutFollowedInput = {
@@ -744,11 +744,11 @@ export type PetUncheckedUpdateWithoutFollowedInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Posts?: Prisma.PostUncheckedUpdateManyWithoutPetNestedInput
-  PetColors?: Prisma.PetColorUncheckedUpdateManyWithoutPetNestedInput
+  Comments?: Prisma.CommentUncheckedUpdateManyWithoutPetNestedInput
   Following?: Prisma.FollowUncheckedUpdateManyWithoutFollowingNestedInput
   Likes?: Prisma.LikeUncheckedUpdateManyWithoutPetNestedInput
-  Comments?: Prisma.CommentUncheckedUpdateManyWithoutPetNestedInput
+  PetColors?: Prisma.PetColorUncheckedUpdateManyWithoutPetNestedInput
+  Posts?: Prisma.PostUncheckedUpdateManyWithoutPetNestedInput
 }
 
 export type PetUpsertWithoutFollowingInput = {
@@ -771,11 +771,11 @@ export type PetUpdateWithoutFollowingInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Posts?: Prisma.PostUpdateManyWithoutPetNestedInput
-  PetColors?: Prisma.PetColorUpdateManyWithoutPetNestedInput
+  Comments?: Prisma.CommentUpdateManyWithoutPetNestedInput
   Followed?: Prisma.FollowUpdateManyWithoutFollowedNestedInput
   Likes?: Prisma.LikeUpdateManyWithoutPetNestedInput
-  Comments?: Prisma.CommentUpdateManyWithoutPetNestedInput
+  PetColors?: Prisma.PetColorUpdateManyWithoutPetNestedInput
+  Posts?: Prisma.PostUpdateManyWithoutPetNestedInput
 }
 
 export type PetUncheckedUpdateWithoutFollowingInput = {
@@ -787,11 +787,11 @@ export type PetUncheckedUpdateWithoutFollowingInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Posts?: Prisma.PostUncheckedUpdateManyWithoutPetNestedInput
-  PetColors?: Prisma.PetColorUncheckedUpdateManyWithoutPetNestedInput
+  Comments?: Prisma.CommentUncheckedUpdateManyWithoutPetNestedInput
   Followed?: Prisma.FollowUncheckedUpdateManyWithoutFollowedNestedInput
   Likes?: Prisma.LikeUncheckedUpdateManyWithoutPetNestedInput
-  Comments?: Prisma.CommentUncheckedUpdateManyWithoutPetNestedInput
+  PetColors?: Prisma.PetColorUncheckedUpdateManyWithoutPetNestedInput
+  Posts?: Prisma.PostUncheckedUpdateManyWithoutPetNestedInput
 }
 
 export type PetCreateWithoutPostsInput = {
@@ -803,11 +803,11 @@ export type PetCreateWithoutPostsInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  PetColors?: Prisma.PetColorCreateNestedManyWithoutPetInput
+  Comments?: Prisma.CommentCreateNestedManyWithoutPetInput
   Followed?: Prisma.FollowCreateNestedManyWithoutFollowedInput
   Following?: Prisma.FollowCreateNestedManyWithoutFollowingInput
   Likes?: Prisma.LikeCreateNestedManyWithoutPetInput
-  Comments?: Prisma.CommentCreateNestedManyWithoutPetInput
+  PetColors?: Prisma.PetColorCreateNestedManyWithoutPetInput
 }
 
 export type PetUncheckedCreateWithoutPostsInput = {
@@ -819,11 +819,11 @@ export type PetUncheckedCreateWithoutPostsInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  PetColors?: Prisma.PetColorUncheckedCreateNestedManyWithoutPetInput
+  Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPetInput
   Followed?: Prisma.FollowUncheckedCreateNestedManyWithoutFollowedInput
   Following?: Prisma.FollowUncheckedCreateNestedManyWithoutFollowingInput
   Likes?: Prisma.LikeUncheckedCreateNestedManyWithoutPetInput
-  Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPetInput
+  PetColors?: Prisma.PetColorUncheckedCreateNestedManyWithoutPetInput
 }
 
 export type PetCreateOrConnectWithoutPostsInput = {
@@ -851,11 +851,11 @@ export type PetUpdateWithoutPostsInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  PetColors?: Prisma.PetColorUpdateManyWithoutPetNestedInput
+  Comments?: Prisma.CommentUpdateManyWithoutPetNestedInput
   Followed?: Prisma.FollowUpdateManyWithoutFollowedNestedInput
   Following?: Prisma.FollowUpdateManyWithoutFollowingNestedInput
   Likes?: Prisma.LikeUpdateManyWithoutPetNestedInput
-  Comments?: Prisma.CommentUpdateManyWithoutPetNestedInput
+  PetColors?: Prisma.PetColorUpdateManyWithoutPetNestedInput
 }
 
 export type PetUncheckedUpdateWithoutPostsInput = {
@@ -867,11 +867,11 @@ export type PetUncheckedUpdateWithoutPostsInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  PetColors?: Prisma.PetColorUncheckedUpdateManyWithoutPetNestedInput
+  Comments?: Prisma.CommentUncheckedUpdateManyWithoutPetNestedInput
   Followed?: Prisma.FollowUncheckedUpdateManyWithoutFollowedNestedInput
   Following?: Prisma.FollowUncheckedUpdateManyWithoutFollowingNestedInput
   Likes?: Prisma.LikeUncheckedUpdateManyWithoutPetNestedInput
-  Comments?: Prisma.CommentUncheckedUpdateManyWithoutPetNestedInput
+  PetColors?: Prisma.PetColorUncheckedUpdateManyWithoutPetNestedInput
 }
 
 export type PetCreateWithoutLikesInput = {
@@ -883,11 +883,11 @@ export type PetCreateWithoutLikesInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  Posts?: Prisma.PostCreateNestedManyWithoutPetInput
-  PetColors?: Prisma.PetColorCreateNestedManyWithoutPetInput
+  Comments?: Prisma.CommentCreateNestedManyWithoutPetInput
   Followed?: Prisma.FollowCreateNestedManyWithoutFollowedInput
   Following?: Prisma.FollowCreateNestedManyWithoutFollowingInput
-  Comments?: Prisma.CommentCreateNestedManyWithoutPetInput
+  PetColors?: Prisma.PetColorCreateNestedManyWithoutPetInput
+  Posts?: Prisma.PostCreateNestedManyWithoutPetInput
 }
 
 export type PetUncheckedCreateWithoutLikesInput = {
@@ -899,11 +899,11 @@ export type PetUncheckedCreateWithoutLikesInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  Posts?: Prisma.PostUncheckedCreateNestedManyWithoutPetInput
-  PetColors?: Prisma.PetColorUncheckedCreateNestedManyWithoutPetInput
+  Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPetInput
   Followed?: Prisma.FollowUncheckedCreateNestedManyWithoutFollowedInput
   Following?: Prisma.FollowUncheckedCreateNestedManyWithoutFollowingInput
-  Comments?: Prisma.CommentUncheckedCreateNestedManyWithoutPetInput
+  PetColors?: Prisma.PetColorUncheckedCreateNestedManyWithoutPetInput
+  Posts?: Prisma.PostUncheckedCreateNestedManyWithoutPetInput
 }
 
 export type PetCreateOrConnectWithoutLikesInput = {
@@ -931,11 +931,11 @@ export type PetUpdateWithoutLikesInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Posts?: Prisma.PostUpdateManyWithoutPetNestedInput
-  PetColors?: Prisma.PetColorUpdateManyWithoutPetNestedInput
+  Comments?: Prisma.CommentUpdateManyWithoutPetNestedInput
   Followed?: Prisma.FollowUpdateManyWithoutFollowedNestedInput
   Following?: Prisma.FollowUpdateManyWithoutFollowingNestedInput
-  Comments?: Prisma.CommentUpdateManyWithoutPetNestedInput
+  PetColors?: Prisma.PetColorUpdateManyWithoutPetNestedInput
+  Posts?: Prisma.PostUpdateManyWithoutPetNestedInput
 }
 
 export type PetUncheckedUpdateWithoutLikesInput = {
@@ -947,11 +947,11 @@ export type PetUncheckedUpdateWithoutLikesInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Posts?: Prisma.PostUncheckedUpdateManyWithoutPetNestedInput
-  PetColors?: Prisma.PetColorUncheckedUpdateManyWithoutPetNestedInput
+  Comments?: Prisma.CommentUncheckedUpdateManyWithoutPetNestedInput
   Followed?: Prisma.FollowUncheckedUpdateManyWithoutFollowedNestedInput
   Following?: Prisma.FollowUncheckedUpdateManyWithoutFollowingNestedInput
-  Comments?: Prisma.CommentUncheckedUpdateManyWithoutPetNestedInput
+  PetColors?: Prisma.PetColorUncheckedUpdateManyWithoutPetNestedInput
+  Posts?: Prisma.PostUncheckedUpdateManyWithoutPetNestedInput
 }
 
 export type PetCreateWithoutCommentsInput = {
@@ -963,11 +963,11 @@ export type PetCreateWithoutCommentsInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  Posts?: Prisma.PostCreateNestedManyWithoutPetInput
-  PetColors?: Prisma.PetColorCreateNestedManyWithoutPetInput
   Followed?: Prisma.FollowCreateNestedManyWithoutFollowedInput
   Following?: Prisma.FollowCreateNestedManyWithoutFollowingInput
   Likes?: Prisma.LikeCreateNestedManyWithoutPetInput
+  PetColors?: Prisma.PetColorCreateNestedManyWithoutPetInput
+  Posts?: Prisma.PostCreateNestedManyWithoutPetInput
 }
 
 export type PetUncheckedCreateWithoutCommentsInput = {
@@ -979,11 +979,11 @@ export type PetUncheckedCreateWithoutCommentsInput = {
   type: string
   created_at?: Date | string
   updated_at?: Date | string
-  Posts?: Prisma.PostUncheckedCreateNestedManyWithoutPetInput
-  PetColors?: Prisma.PetColorUncheckedCreateNestedManyWithoutPetInput
   Followed?: Prisma.FollowUncheckedCreateNestedManyWithoutFollowedInput
   Following?: Prisma.FollowUncheckedCreateNestedManyWithoutFollowingInput
   Likes?: Prisma.LikeUncheckedCreateNestedManyWithoutPetInput
+  PetColors?: Prisma.PetColorUncheckedCreateNestedManyWithoutPetInput
+  Posts?: Prisma.PostUncheckedCreateNestedManyWithoutPetInput
 }
 
 export type PetCreateOrConnectWithoutCommentsInput = {
@@ -1011,11 +1011,11 @@ export type PetUpdateWithoutCommentsInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Posts?: Prisma.PostUpdateManyWithoutPetNestedInput
-  PetColors?: Prisma.PetColorUpdateManyWithoutPetNestedInput
   Followed?: Prisma.FollowUpdateManyWithoutFollowedNestedInput
   Following?: Prisma.FollowUpdateManyWithoutFollowingNestedInput
   Likes?: Prisma.LikeUpdateManyWithoutPetNestedInput
+  PetColors?: Prisma.PetColorUpdateManyWithoutPetNestedInput
+  Posts?: Prisma.PostUpdateManyWithoutPetNestedInput
 }
 
 export type PetUncheckedUpdateWithoutCommentsInput = {
@@ -1027,11 +1027,11 @@ export type PetUncheckedUpdateWithoutCommentsInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Posts?: Prisma.PostUncheckedUpdateManyWithoutPetNestedInput
-  PetColors?: Prisma.PetColorUncheckedUpdateManyWithoutPetNestedInput
   Followed?: Prisma.FollowUncheckedUpdateManyWithoutFollowedNestedInput
   Following?: Prisma.FollowUncheckedUpdateManyWithoutFollowingNestedInput
   Likes?: Prisma.LikeUncheckedUpdateManyWithoutPetNestedInput
+  PetColors?: Prisma.PetColorUncheckedUpdateManyWithoutPetNestedInput
+  Posts?: Prisma.PostUncheckedUpdateManyWithoutPetNestedInput
 }
 
 
@@ -1040,21 +1040,21 @@ export type PetUncheckedUpdateWithoutCommentsInput = {
  */
 
 export type PetCountOutputType = {
-  Posts: number
-  PetColors: number
+  Comments: number
   Followed: number
   Following: number
   Likes: number
-  Comments: number
+  PetColors: number
+  Posts: number
 }
 
 export type PetCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  Posts?: boolean | PetCountOutputTypeCountPostsArgs
-  PetColors?: boolean | PetCountOutputTypeCountPetColorsArgs
+  Comments?: boolean | PetCountOutputTypeCountCommentsArgs
   Followed?: boolean | PetCountOutputTypeCountFollowedArgs
   Following?: boolean | PetCountOutputTypeCountFollowingArgs
   Likes?: boolean | PetCountOutputTypeCountLikesArgs
-  Comments?: boolean | PetCountOutputTypeCountCommentsArgs
+  PetColors?: boolean | PetCountOutputTypeCountPetColorsArgs
+  Posts?: boolean | PetCountOutputTypeCountPostsArgs
 }
 
 /**
@@ -1070,15 +1070,8 @@ export type PetCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensio
 /**
  * PetCountOutputType without action
  */
-export type PetCountOutputTypeCountPostsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PostWhereInput
-}
-
-/**
- * PetCountOutputType without action
- */
-export type PetCountOutputTypeCountPetColorsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PetColorWhereInput
+export type PetCountOutputTypeCountCommentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CommentWhereInput
 }
 
 /**
@@ -1105,8 +1098,15 @@ export type PetCountOutputTypeCountLikesArgs<ExtArgs extends runtime.Types.Exten
 /**
  * PetCountOutputType without action
  */
-export type PetCountOutputTypeCountCommentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.CommentWhereInput
+export type PetCountOutputTypeCountPetColorsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PetColorWhereInput
+}
+
+/**
+ * PetCountOutputType without action
+ */
+export type PetCountOutputTypeCountPostsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PostWhereInput
 }
 
 
@@ -1119,12 +1119,12 @@ export type PetSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = ru
   type?: boolean
   created_at?: boolean
   updated_at?: boolean
-  Posts?: boolean | Prisma.Pet$PostsArgs<ExtArgs>
-  PetColors?: boolean | Prisma.Pet$PetColorsArgs<ExtArgs>
+  Comments?: boolean | Prisma.Pet$CommentsArgs<ExtArgs>
   Followed?: boolean | Prisma.Pet$FollowedArgs<ExtArgs>
   Following?: boolean | Prisma.Pet$FollowingArgs<ExtArgs>
   Likes?: boolean | Prisma.Pet$LikesArgs<ExtArgs>
-  Comments?: boolean | Prisma.Pet$CommentsArgs<ExtArgs>
+  PetColors?: boolean | Prisma.Pet$PetColorsArgs<ExtArgs>
+  Posts?: boolean | Prisma.Pet$PostsArgs<ExtArgs>
   _count?: boolean | Prisma.PetCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["pet"]>
 
@@ -1163,12 +1163,12 @@ export type PetSelectScalar = {
 
 export type PetOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "birthday" | "breed" | "weight" | "type" | "created_at" | "updated_at", ExtArgs["result"]["pet"]>
 export type PetInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  Posts?: boolean | Prisma.Pet$PostsArgs<ExtArgs>
-  PetColors?: boolean | Prisma.Pet$PetColorsArgs<ExtArgs>
+  Comments?: boolean | Prisma.Pet$CommentsArgs<ExtArgs>
   Followed?: boolean | Prisma.Pet$FollowedArgs<ExtArgs>
   Following?: boolean | Prisma.Pet$FollowingArgs<ExtArgs>
   Likes?: boolean | Prisma.Pet$LikesArgs<ExtArgs>
-  Comments?: boolean | Prisma.Pet$CommentsArgs<ExtArgs>
+  PetColors?: boolean | Prisma.Pet$PetColorsArgs<ExtArgs>
+  Posts?: boolean | Prisma.Pet$PostsArgs<ExtArgs>
   _count?: boolean | Prisma.PetCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type PetIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -1177,12 +1177,12 @@ export type PetIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
 export type $PetPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Pet"
   objects: {
-    Posts: Prisma.$PostPayload<ExtArgs>[]
-    PetColors: Prisma.$PetColorPayload<ExtArgs>[]
+    Comments: Prisma.$CommentPayload<ExtArgs>[]
     Followed: Prisma.$FollowPayload<ExtArgs>[]
     Following: Prisma.$FollowPayload<ExtArgs>[]
     Likes: Prisma.$LikePayload<ExtArgs>[]
-    Comments: Prisma.$CommentPayload<ExtArgs>[]
+    PetColors: Prisma.$PetColorPayload<ExtArgs>[]
+    Posts: Prisma.$PostPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1587,12 +1587,12 @@ readonly fields: PetFieldRefs;
  */
 export interface Prisma__PetClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  Posts<T extends Prisma.Pet$PostsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Pet$PostsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  PetColors<T extends Prisma.Pet$PetColorsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Pet$PetColorsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PetColorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  Comments<T extends Prisma.Pet$CommentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Pet$CommentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CommentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   Followed<T extends Prisma.Pet$FollowedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Pet$FollowedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FollowPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   Following<T extends Prisma.Pet$FollowingArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Pet$FollowingArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FollowPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   Likes<T extends Prisma.Pet$LikesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Pet$LikesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  Comments<T extends Prisma.Pet$CommentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Pet$CommentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CommentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  PetColors<T extends Prisma.Pet$PetColorsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Pet$PetColorsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PetColorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  Posts<T extends Prisma.Pet$PostsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Pet$PostsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2018,51 +2018,27 @@ export type PetDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalA
 }
 
 /**
- * Pet.Posts
+ * Pet.Comments
  */
-export type Pet$PostsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Pet$CommentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Post
+   * Select specific fields to fetch from the Comment
    */
-  select?: Prisma.PostSelect<ExtArgs> | null
+  select?: Prisma.CommentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Post
+   * Omit specific fields from the Comment
    */
-  omit?: Prisma.PostOmit<ExtArgs> | null
+  omit?: Prisma.CommentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PostInclude<ExtArgs> | null
-  where?: Prisma.PostWhereInput
-  orderBy?: Prisma.PostOrderByWithRelationInput | Prisma.PostOrderByWithRelationInput[]
-  cursor?: Prisma.PostWhereUniqueInput
+  include?: Prisma.CommentInclude<ExtArgs> | null
+  where?: Prisma.CommentWhereInput
+  orderBy?: Prisma.CommentOrderByWithRelationInput | Prisma.CommentOrderByWithRelationInput[]
+  cursor?: Prisma.CommentWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.PostScalarFieldEnum | Prisma.PostScalarFieldEnum[]
-}
-
-/**
- * Pet.PetColors
- */
-export type Pet$PetColorsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the PetColor
-   */
-  select?: Prisma.PetColorSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the PetColor
-   */
-  omit?: Prisma.PetColorOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PetColorInclude<ExtArgs> | null
-  where?: Prisma.PetColorWhereInput
-  orderBy?: Prisma.PetColorOrderByWithRelationInput | Prisma.PetColorOrderByWithRelationInput[]
-  cursor?: Prisma.PetColorWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.PetColorScalarFieldEnum | Prisma.PetColorScalarFieldEnum[]
+  distinct?: Prisma.CommentScalarFieldEnum | Prisma.CommentScalarFieldEnum[]
 }
 
 /**
@@ -2138,27 +2114,51 @@ export type Pet$LikesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs 
 }
 
 /**
- * Pet.Comments
+ * Pet.PetColors
  */
-export type Pet$CommentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Pet$PetColorsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Comment
+   * Select specific fields to fetch from the PetColor
    */
-  select?: Prisma.CommentSelect<ExtArgs> | null
+  select?: Prisma.PetColorSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Comment
+   * Omit specific fields from the PetColor
    */
-  omit?: Prisma.CommentOmit<ExtArgs> | null
+  omit?: Prisma.PetColorOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CommentInclude<ExtArgs> | null
-  where?: Prisma.CommentWhereInput
-  orderBy?: Prisma.CommentOrderByWithRelationInput | Prisma.CommentOrderByWithRelationInput[]
-  cursor?: Prisma.CommentWhereUniqueInput
+  include?: Prisma.PetColorInclude<ExtArgs> | null
+  where?: Prisma.PetColorWhereInput
+  orderBy?: Prisma.PetColorOrderByWithRelationInput | Prisma.PetColorOrderByWithRelationInput[]
+  cursor?: Prisma.PetColorWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.CommentScalarFieldEnum | Prisma.CommentScalarFieldEnum[]
+  distinct?: Prisma.PetColorScalarFieldEnum | Prisma.PetColorScalarFieldEnum[]
+}
+
+/**
+ * Pet.Posts
+ */
+export type Pet$PostsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Post
+   */
+  select?: Prisma.PostSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Post
+   */
+  omit?: Prisma.PostOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PostInclude<ExtArgs> | null
+  where?: Prisma.PostWhereInput
+  orderBy?: Prisma.PostOrderByWithRelationInput | Prisma.PostOrderByWithRelationInput[]
+  cursor?: Prisma.PostWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PostScalarFieldEnum | Prisma.PostScalarFieldEnum[]
 }
 
 /**
