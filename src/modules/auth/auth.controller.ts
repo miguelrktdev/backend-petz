@@ -17,7 +17,7 @@ export const userAuthenticateController = async (req: Request, res: Response, ne
 			})
 		}
 		const { userAuthenticateService } = new UserAuthenticateFactory().handle()
-		const { token, refreshToken } = await userAuthenticateService.handle(data)
+		const { accessToken, refreshToken } = await userAuthenticateService.handle(data)
 		res.cookie("refreshToken", refreshToken, {
 			httpOnly: true,
 			secure: env.NODE_ENV === "production",
@@ -25,7 +25,7 @@ export const userAuthenticateController = async (req: Request, res: Response, ne
 			maxAge: 7 * 24 * 60 * 60 * 1000, // 7 dias
 		})
 		return res.status(StatusCodes.OK).json({
-			token,
+			accessToken,
 		})
 	} catch (error) {
 		if (error instanceof ResourceNotFoundError) {
