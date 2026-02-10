@@ -4,21 +4,22 @@ import z from "zod"
 dotenv.config()
 
 const envSchema = z.object({
-	PORT: z.coerce.number().default(3333),
-	DATABASE_URL: z.string(),
-	NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
-	EMAIL_USER: z.string(),
-	EMAIL_PASSWORD: z.string(),
-	JWT_SECRET: z.string(),
-	JWT_TOKEN_EXPIRES_IN: z.string().default("15m"),
-	JWT_REFRESH_TOKEN_EXPIRES_IN: z.string().default("7d"),
+  PORT: z.coerce.number().default(3333),
+  DATABASE_URL: z.string(),
+  NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
+  EMAIL_USER: z.string(),
+  EMAIL_PASSWORD: z.string(),
+  JWT_SECRET: z.string(),
+  JWT_TOKEN_EXPIRES_IN: z.string().default("15m"),
+  JWT_REFRESH_TOKEN_EXPIRES_IN: z.string().default("7d"),
+  FRONTEND_URL: z.string()
 })
 
 const _env = envSchema.safeParse(process.env)
 
 if (!_env.success) {
-	console.error("Invalid Environments Variables")
-	throw new Error("Invalid Environments Variables")
+  console.error("Invalid Environments Variables")
+  throw new Error("Invalid Environments Variables")
 }
 
 export const env = _env.data
