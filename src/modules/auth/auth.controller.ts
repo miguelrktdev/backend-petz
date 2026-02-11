@@ -8,41 +8,41 @@ import { userAuthenticateSchema } from "./auth.schema.ts"
 import { UserAuthenticateFactory } from "./factories/make-authenticate.factory.ts"
 
 export const userAuthenticateController = async (req: Request, res: Response, next: NextFunction) => {
-	try {
-		const { success, data, error } = userAuthenticateSchema.safeParse(req.body)
-		if (!success) {
-			const issue = error.issues[0]
-			return res.status(StatusCodes.BAD_REQUEST).json({
-				message: issue.message,
-			})
-		}
-		const { userAuthenticateService } = new UserAuthenticateFactory().handle()
-		const { token, refreshToken } = await userAuthenticateService.handle(data)
-		res.cookie("refreshToken", refreshToken, {
-			httpOnly: true,
-			secure: env.NODE_ENV === "production",
-			sameSite: "strict",
-			maxAge: 7 * 24 * 60 * 60 * 1000, // 7 dias
-		})
-		return res.status(StatusCodes.OK).json({
-			token,
-		})
-	} catch (error) {
-		if (error instanceof ResourceNotFoundError) {
-			return res.status(StatusCodes.NOT_FOUND).json({
-				message: error.message,
-			})
-		}
-		if (error instanceof UserNotVerifiedError) {
-			return res.status(StatusCodes.FORBIDDEN).json({
-				message: error.message,
-			})
-		}
-		if (error instanceof InvalidCredentialsError) {
-			return res.status(StatusCodes.UNAUTHORIZED).json({
-				message: error.message,
-			})
-		}
-		next(error)
-	}
+  try {
+    const { success, data, error } = userAuthenticateSchema.safeParse(req.body)
+    if (!success) {
+      const issue = error.issues[0]
+      return res.status(StatusCodes.BAD_REQUEST).json({
+        message: issue.message,
+      })
+    }
+    const { userAuthenticateService } = new UserAuthenticateFactory().handle()
+    const { accessToken, refreshToken } = await userAuthenticateService.handle(data)
+    res.cookie("refreshToken", refreshToken, {
+      httpOnly: true,
+      secure: env.NODE_ENV === "production",
+      sameSite: "strict",
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 dias
+    })
+    return res.status(StatusCodes.OK).json({
+      accessToken,
+    })
+  } catch (error) {
+    if (error instanceof ResourceNotFoundError) {
+      return res.status(StatusCodes.NOT_FOUND).json({
+        message: error.message,
+      })
+    }
+    if (error instanceof UserNotVerifiedError) {
+      return res.status(StatusCodes.FORBIDDEN).json({
+        message: error.message,
+      })
+    }
+    if (error instanceof InvalidCredentialsError) {
+      return res.status(StatusCodes.UNAUTHORIZED).json({
+        message: error.message,
+      })
+    }
+    next(error)
+  }
 }

@@ -1,0 +1,16 @@
+meta {
+  name: Clear Cookies
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{URL}}/auth/clear-cookies
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

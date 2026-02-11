@@ -2,17 +2,17 @@ import { env } from "@/env.ts"
 import JWT from "jsonwebtoken"
 
 interface GenerateJwtTokenRequest {
-	payload: string | object | Buffer<ArrayBufferLike>
-	options?: JWT.SignOptions
+  payload: string | object | Buffer<ArrayBufferLike>
+  options?: JWT.SignOptions
 }
 
 interface GenerateJwtTokenResponse {
-	token: string
+  token: string
 }
 
 export class GenerateJwtToken {
-	handle({ payload, options }: GenerateJwtTokenRequest): GenerateJwtTokenResponse {
-		const token = JWT.sign(payload, env.JWT_SECRET, options)
-		return { token }
-	}
+  handle({ payload, options }: GenerateJwtTokenRequest): GenerateJwtTokenResponse {
+    const token = JWT.sign(payload, env.JWT_SECRET, options)
+    return { token }
+  }
 }

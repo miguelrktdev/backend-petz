@@ -1,0 +1,22 @@
+meta {
+  name: Verify OTP
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{URL}}/auth/verify-otp
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "code": "935854"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
