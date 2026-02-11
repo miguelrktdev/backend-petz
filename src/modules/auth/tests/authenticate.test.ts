@@ -145,7 +145,7 @@ describe("User Authenticate Service", () => {
       })
 
       expect(result).toEqual({
-        token: "token123",
+        accessToken: "token123",
         refreshToken: "token123",
       })
       expect(MockedPrismaUserRepository.findByEmail).toHaveBeenCalledWith("johndoe@email.com")
