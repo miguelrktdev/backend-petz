@@ -22,7 +22,6 @@
 - [ ] Permitir que o usuário pesquise pets pelo nome;
 - [ ] Permitir que o usuário visualize a página individual de um post;
 
-
 ## Regras de negócios
 
 - [ x ] Um usuário não pode se cadastrar usando email ou nome de usuário já existentes;
@@ -44,7 +43,6 @@
 - [ ] Imagens de perfil e posts devem ser armazenadas externamente (ex: Cloudinary);
 - [ ] A exclusão de um pet deve remover seus posts, curtidas e comentários associados.
 
-
 ## Requisitos não funcionais
 
 - [ x ] O sistema deve ser desenvolvido utilizando arquitetura REST;
@@ -63,10 +61,9 @@
 - [ ] O sistema deve utilizar variáveis de ambiente para dados sensíveis;
 - [ ] O sistema deve enviar emails de boas vindas para o usuário;
 
-
 # Rotas
 
- ## User
+## User
 
      - [ x ] POST   /users
      - [ ] GET    /users/:id
@@ -76,8 +73,7 @@
      - [ ] POST /users/:userId/pets
      - [ ] GET  /users/:userId/pets
 
-
- ## Pet
+## Pet
 
     - [ ] GET    /pets/:id
     - [ ] PUT    /pets/:id
@@ -88,9 +84,7 @@
     - [ ] GET    /pets/:petId/colors
     - [ ] DELETE /pets/:petId/colors/:colorId
 
-
-
- ## Post
+## Post
 
      - [ ] GET /posts
      - [ ] GET /posts/:id
@@ -103,11 +97,9 @@
      - [ ] GET    /posts/:postId/images
      - [ ] DELETE /posts/:postId/images/:imageId
 
-
 ## Comments
 
     - [ ] DELETE /comments/:commentId
-
 
 ## Auth
 
@@ -117,4 +109,3 @@
     - [ ] POST /auth/reset-password
     - [ ] POST /auth/verify-otp
     - [ ] POST /auth/refresh
-

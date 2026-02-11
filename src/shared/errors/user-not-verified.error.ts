@@ -1,5 +1,5 @@
 export class UserNotVerifiedError extends Error {
-	constructor() {
-		super("Usuário não verificado")
-	}
+  constructor() {
+    super("Usuário não verificado")
+  }
 }

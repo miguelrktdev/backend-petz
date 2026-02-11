@@ -10,44 +10,44 @@ O Petz Social Media permite que usuários criem perfis para seus pets, publiquem
 
 ### 👤 Usuários
 
-* Criar, atualizar e remover usuários
-* Autenticação completa (login, logout, refresh)
-* Recuperação de senha via OTP
+- Criar, atualizar e remover usuários
+- Autenticação completa (login, logout, refresh)
+- Recuperação de senha via OTP
 
 ### 🐕 Pets
 
-* Cadastro de pets vinculados a um usuário
-* Gerenciamento de cores do pet
-* Seguir e ser seguido por outros pets
+- Cadastro de pets vinculados a um usuário
+- Gerenciamento de cores do pet
+- Seguir e ser seguido por outros pets
 
 ### 📝 Posts
 
-* Criação de posts por pets
-* Upload e gerenciamento de imagens
-* Curtidas em posts
-* Comentários em posts
+- Criação de posts por pets
+- Upload e gerenciamento de imagens
+- Curtidas em posts
+- Comentários em posts
 
 ---
 
 ## 🧠 Conceitos aplicados
 
-* API REST seguindo **padrões semânticos**
-* **Normalização até a 4FN**
-* Separação clara de recursos
-* Autenticação baseada em token
-* Relacionamentos bem definidos (User → Pet → Post)
+- API REST seguindo **padrões semânticos**
+- **Normalização até a 4FN**
+- Separação clara de recursos
+- Autenticação baseada em token
+- Relacionamentos bem definidos (User → Pet → Post)
 
 ---
 
 ## 🛠️ Tecnologias
 
-* **Node.js**
-* **Express**
-* **TypeScript**
-* **JWT** (autenticação)
-* **Vitest** (testes)
-* **PostgreSQL** 
-* **Prisma**
+- **Node.js**
+- **Express**
+- **TypeScript**
+- **JWT** (autenticação)
+- **Vitest** (testes)
+- **PostgreSQL**
+- **Prisma**
 
 ---
 
@@ -190,7 +190,7 @@ npm run test
 
 Esse projeto foi pensado como um **backend de portfólio**, focado em demonstrar:
 
-* Clareza de modelagem
-* Boas práticas REST
-* Organização de código
-* Escalabilidade
+- Clareza de modelagem
+- Boas práticas REST
+- Organização de código
+- Escalabilidade
