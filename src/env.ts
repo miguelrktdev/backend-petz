@@ -12,7 +12,7 @@ const envSchema = z.object({
   JWT_SECRET: z.string(),
   JWT_TOKEN_EXPIRES_IN: z.string().default("15m"),
   JWT_REFRESH_TOKEN_EXPIRES_IN: z.string().default("7d"),
-  FRONTEND_URL: z.string()
+  FRONTEND_URL: z.string(),
 })
 
 const _env = envSchema.safeParse(process.env)

@@ -1,10 +1,10 @@
 interface OTPEmailTemplateProps {
-	name: string
-	otp: string
+  name: string
+  otp: string
 }
 
 export function otpVerificationEmailTemplate({ name, otp }: OTPEmailTemplateProps): string {
-	return `
+  return `
     <!DOCTYPE html>
     <html lang="pt-BR">
     <head>
