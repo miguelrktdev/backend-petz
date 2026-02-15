@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { User } from "@/generated/prisma/client.ts"
 import { UserAlreadyExistsError } from "@/shared/errors/user-already-exists.error.ts"
 import bcrypt from "bcryptjs"

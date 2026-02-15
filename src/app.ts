@@ -1,34 +1,38 @@
+// src/app.ts
+import Fastify from "fastify"
+import fastifyCookie from "@fastify/cookie"
+import fastifyJwt from "@fastify/jwt"
+import fastifyCors from "@fastify/cors"
 import { routes } from "@/routes.ts"
-import cookieParser from "cookie-parser"
-import cors from "cors"
-import express, { type ErrorRequestHandler } from "express"
-import helmet from "helmet"
-import { StatusCodes } from "http-status-codes"
+import { env } from "@/env.ts"
 import { ZodError } from "zod"
-import { env } from "./env.ts"
+import { StatusCodes } from "http-status-codes"
 
-export const app = express()
+export function buildApp() {
+  const app = Fastify()
 
-app.use(cors({ origin: env.FRONTEND_URL }))
-app.use(helmet())
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser())
-app.use("/api", routes)
-app.use((_req, res) => {
-  return res.status(StatusCodes.NOT_FOUND).json({
-    message: "Rota não encontrada!",
+  // Plugins
+  app.register(fastifyCookie)
+  app.register(fastifyJwt, {
+    secret: env.JWT_SECRET,
+    cookie: {
+      cookieName: "refreshToken",
+      signed: false,
+    },
   })
-})
-const globalErrorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
-  if (err instanceof ZodError) {
-    return res.status(StatusCodes.BAD_REQUEST).json({
-      message: err.message,
+  app.register(fastifyCors)
+
+  // Rotas
+  app.register(routes, { prefix: "/api" })
+  app.setErrorHandler((error, _request, reply) => {
+    if (error instanceof ZodError) {
+      return reply.status(StatusCodes.BAD_REQUEST).send({ message: error.message })
+    }
+
+    return reply.status(StatusCodes.INTERNAL_SERVER_ERROR).send({
+      message: "Internal server error",
     })
-  }
-
-  return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-    message: "Internal Server Error ❌",
   })
+
+  return app
 }
-app.use(globalErrorHandler)

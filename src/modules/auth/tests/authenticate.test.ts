@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { User } from "@/generated/prisma/client.ts"
 import { InvalidCredentialsError } from "@/shared/errors/invalid-credentials.error.ts"
 import { ResourceNotFoundError } from "@/shared/errors/resource-not-found.error.ts"
@@ -145,7 +146,7 @@ describe("User Authenticate Service", () => {
       })
 
       expect(result).toEqual({
-        token: "token123",
+        accessToken: "token123",
         refreshToken: "token123",
       })
       expect(MockedPrismaUserRepository.findByEmail).toHaveBeenCalledWith("johndoe@email.com")

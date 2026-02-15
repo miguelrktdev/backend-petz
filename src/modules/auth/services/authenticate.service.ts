@@ -1,9 +1,10 @@
-import bcrypt from "bcryptjs"
+import type { User } from "@/generated/prisma/client.ts"
 import type { PrismaUserRepository } from "@/modules/users/prisma-user.repository.ts"
 import { InvalidCredentialsError } from "@/shared/errors/invalid-credentials.error.ts"
 import { ResourceNotFoundError } from "@/shared/errors/resource-not-found.error.ts"
 import { UserNotVerifiedError } from "@/shared/errors/user-not-verified.error.ts"
 import type { GenerateJwtToken } from "@/shared/lib/generate-jwt-token.ts"
+import bcrypt from "bcryptjs"
 
 interface AuthenticateUserRequest {
   email: string
@@ -11,8 +12,7 @@ interface AuthenticateUserRequest {
 }
 
 interface AuthenticateUserResponse {
-  accessToken: string
-  refreshToken: string
+  user: User
 }
 
 export class UserAuthenticateService {
@@ -38,27 +38,8 @@ export class UserAuthenticateService {
       throw new InvalidCredentialsError()
     }
 
-    const { token: accessToken } = this.generateJwtToken.handle({
-      payload: {
-        sub: user.id,
-      },
-      options: {
-        expiresIn: "15m",
-      },
-    })
-
-    const { token: refreshToken } = this.generateJwtToken.handle({
-      payload: {
-        sub: user.id,
-      },
-      options: {
-        expiresIn: "7d",
-      },
-    })
-
     return {
-      accessToken,
-      refreshToken,
+      user,
     }
   }
 }

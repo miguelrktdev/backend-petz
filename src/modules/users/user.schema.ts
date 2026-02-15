@@ -25,3 +25,7 @@ export const userRegisterSchema = z.object({
   password: passwordSchema,
   bio: z.string().min(1, { error: "Bio é obrigatória" }).max(160),
 })
+
+export const userProfileSchema = z.object({
+  userId: z.string().min(1, { error: "ID do usuário obrigatório" }),
+})
