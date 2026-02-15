@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { User } from "@/generated/prisma/client.ts"
 import { InvalidCredentialsError } from "@/shared/errors/invalid-credentials.error.ts"
 import { ResourceNotFoundError } from "@/shared/errors/resource-not-found.error.ts"

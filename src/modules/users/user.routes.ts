@@ -1,6 +1,6 @@
-import { Router } from "express"
+import type { FastifyInstance } from "fastify"
 import { userRegisterController } from "./user.controller.ts"
 
-export const userRouter = Router()
-
-userRouter.post("/register", userRegisterController)
+export const userRoutes = async (app: FastifyInstance) => {
+  app.post("/register", userRegisterController)
+}

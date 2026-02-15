@@ -10,8 +10,8 @@ export default defineConfig([
     extends: ["js/recommended"],
     languageOptions: { globals: globals.node },
     rules: {
-      "@typescript-eslint/no-explicit-any": 0
-    }
+      "@typescript-eslint/no-explicit-any": "off",
+    },
   },
   tseslint.configs.recommended,
 ])
