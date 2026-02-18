@@ -1,8 +1,9 @@
 import { app } from "~/app.ts"
+import { env } from "~/env.ts"
 
 app
   .listen({
-    port: 3333,
+    port: env.PORT,
     host: "0.0.0.0",
   })
   .then(() => {

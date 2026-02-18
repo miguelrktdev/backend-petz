@@ -1,0 +1,167 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id                  String               @id @default(uuid())
+  name                String
+  email               String               @unique
+  username            String               @unique
+  password_hash       String
+  bio                 String?
+  profile_pic         String?
+  profile_pic_id      String?
+  created_at          DateTime             @default(now())
+  updated_at          DateTime             @updatedAt
+  Otps                OTP[]
+  ResetPasswordTokens ResetPasswordToken[]
+  Pets                Pet[]
+
+  @@map("users")
+}
+
+model OTP {
+  id         String    @id @default(uuid())
+  code       String
+  expires_at DateTime
+  revoked_at DateTime?
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+  user       User      @relation(fields: [user_id], references: [id])
+  user_id    String
+
+  @@map("otps")
+}
+
+model ResetPasswordToken {
+  id         String    @id @default(uuid())
+  code       String
+  expires_at DateTime
+  revoked_at DateTime?
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+  user       User      @relation(fields: [user_id], references: [id])
+  user_id    String
+
+  @@map("reset_password_tokens")
+}
+
+enum PetType {
+  DOG
+  CAT
+  BIRD
+  FISH
+  RABBIT
+  HAMSTER
+  REPTILE
+  OTHER
+}
+
+enum PetColor {
+  BLACK
+  WHITE
+  BROWN
+  GOLDEN
+  GRAY
+  CREAM
+  ORANGE
+  TAN
+  SPOTTED
+  STRIPED
+  MIXED
+  OTHER
+}
+
+model Pet {
+  id          String    @id @default(uuid())
+  name        String
+  birthday    DateTime
+  breed       String
+  weight      Int
+  type        PetType   @default(DOG)
+  color       PetColor  @default(BROWN)
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
+  user        User      @relation(fields: [user_id], references: [id])
+  user_id     String
+  Posts       Post[]
+  Likes       Like[]
+  Comments    Comment[]
+  followed_by Follow[]  @relation("followingBy")
+  follows     Follow[]  @relation("followedBy")
+
+  @@unique([user_id, name])
+  @@map("pets")
+}
+
+model PostImage {
+  id      String @id @default(uuid())
+  post    Post   @relation(fields: [post_id], references: [id])
+  post_id String
+  url     String
+
+  @@map("post_images")
+}
+
+model Post {
+  id         String      @id @default(uuid())
+  caption    String?
+  created_at DateTime    @default(now())
+  updated_at DateTime    @updatedAt
+  pet        Pet         @relation(fields: [pet_id], references: [id])
+  pet_id     String
+  PostImages PostImage[]
+  Likes      Like[]
+  comments   Comment[]
+
+  @@map("posts")
+}
+
+model Like {
+  id         String   @id @default(uuid())
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  pet        Pet      @relation(fields: [pet_id], references: [id])
+  pet_id     String
+  post       Post     @relation(fields: [post_id], references: [id])
+  post_id    String
+
+  @@unique([post_id, pet_id])
+  @@map("likes")
+}
+
+model Comment {
+  id         String   @id @default(uuid())
+  content    String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  pet        Pet      @relation(fields: [pet_id], references: [id])
+  pet_id     String
+  post       Post     @relation(fields: [post_id], references: [id])
+  post_id    String
+
+  @@map("comments")
+}
+
+model Follow {
+  id               String   @id @default(uuid())
+  pet_following    Pet      @relation("followingBy", fields: [pet_following_id], references: [id])
+  pet_following_id String
+  pet_followed     Pet      @relation("followedBy", fields: [pet_followed_id], references: [id])
+  pet_followed_id  String
+  created_at       DateTime @default(now())
+
+  @@unique([pet_following_id, pet_followed_id])
+  @@map("follows")
+}
