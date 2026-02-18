@@ -21,9 +21,7 @@
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [API Documentation](#api-documentation)
 - [Testes](#testes)
-- [Deployment](#deployment)
 - [Contribuindo](#contribuindo)
-- [Licença](#licença)
 
 ---
 
@@ -162,8 +160,6 @@ CLOUDINARY_API_SECRET=sua-api-secret
 # Redis (opcional)
 REDIS_URL=redis://localhost:6379
 
-# Sentry (opcional)
-SENTRY_DSN=seu-sentry-dsn
 ```
 
 ---
@@ -176,7 +172,7 @@ SENTRY_DSN=seu-sentry-dsn
 npm run dev
 ```
 
-O servidor iniciará em `http://localhost:3000`
+O servidor iniciará em `http://localhost:3333`
 
 ### Modo Produção
 
@@ -207,8 +203,8 @@ npm run lint:fix
 ```
 backend/
 ├── src/
-│   ├── config/              # Configurações da aplicação
-│   ├── controllers/         # Controladores (lógica HTTP)
+│   ├── config/             # Configurações da aplicação
+│   ├── controllers/        # Controladores (lógica HTTP)
 │   ├── services/           # Lógica de negócio
 │   ├── models/             # Modelos de dados (Prisma)
 │   ├── middlewares/        # Middlewares (auth, validation, etc)
@@ -217,7 +213,8 @@ backend/
 │   ├── validators/         # Validadores de dados
 │   ├── types/              # TypeScript types e interfaces
 │   ├── errors/             # Classes de erro customizadas
-│   └── app.ts              # Configuração da aplicação
+│   ├── app.ts              # Configuração da aplicação
+│   └── server.ts           # Inicialização da aplicação
 ├── prisma/
 │   ├── schema.prisma       # Schema do banco de dados
 │   └── migrations/         # Migrations do banco
@@ -235,7 +232,7 @@ backend/
 ### Base URL
 
 ```
-http://localhost:3000/api
+http://localhost:3333/api
 ```
 
 ### Autenticação (Auth)
@@ -254,13 +251,14 @@ http://localhost:3000/api
 
 ### Usuários (Users)
 
-| Método | Endpoint            | Descrição              |
-| ------ | ------------------- | ---------------------- |
-| GET    | `/users/:id`        | Obter perfil           |
-| PUT    | `/users/:id`        | Editar perfil          |
-| DELETE | `/users/:id`        | Deletar conta          |
-| GET    | `/users/:id/pets`   | Listar pets do usuário |
-| POST   | `/users/:id/avatar` | Upload foto de perfil  |
+| Método | Endpoint            | Descrição                           |
+| ------ | ------------------- | ----------------------------------- |
+| GET    | `/users/:id`        | Obter perfil                        |
+| GET    | `/me`               | Obter perfil do usuário autenticado |
+| PUT    | `/users/:id`        | Editar perfil                       |
+| DELETE | `/users/:id`        | Deletar conta                       |
+| GET    | `/users/:id/pets`   | Listar pets do usuário              |
+| POST   | `/users/:id/avatar` | Upload foto de perfil               |
 
 ### Pets
 
@@ -333,31 +331,6 @@ npm run test:load
 
 ---
 
-## 🌐 Deployment
-
-### Docker
-
-```bash
-# Build a imagem
-docker build -t petz-backend .
-
-# Rodar container
-docker run -p 3000:3000 --env-file .env petz-backend
-```
-
-### Heroku
-
-```bash
-# Login
-heroku login
-
-# Criar app
-heroku create petz-backend
-
-# Deploy
-git push heroku main
-```
-
 ### Railway/Render
 
 Você pode fazer deploy diretamente do GitHub conectando o repositório na plataforma.
@@ -399,15 +372,7 @@ Contribuições são bem-vindas! Para começar:
 
 ## 📧 Contato & Suporte
 
-- 📧 Email: [dev@petz.com](mailto:dev@petz.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/seu-usuario/petz/issues)
-- 💬 Discussões: [GitHub Discussions](https://github.com/seu-usuario/petz/discussions)
-
----
-
-## 📄 Licença
-
-Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+- 📧 Email: [suportepetzsocialmedia@gmail.com](mailto:suportepetzsocialmedia@gmail.com)
 
 ---
 
