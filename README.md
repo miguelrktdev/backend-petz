@@ -205,14 +205,15 @@ backend/
 ├── src/
 │   ├── config/             # Configurações da aplicação
 │   ├── controllers/        # Controladores (lógica HTTP)
-│   ├── services/           # Lógica de negócio
-│   ├── models/             # Modelos de dados (Prisma)
+│   ├── services/           # Camada de serviços (regras de negócio)
+│   ├── repositories/       # Camada de acesso a dados
 │   ├── middlewares/        # Middlewares (auth, validation, etc)
 │   ├── routes/             # Definição de rotas
 │   ├── utils/              # Funções utilitárias
 │   ├── validators/         # Validadores de dados
 │   ├── types/              # TypeScript types e interfaces
 │   ├── errors/             # Classes de erro customizadas
+│   ├── lib/                # Bibliotecas externas (Prisma, etc)
 │   ├── app.ts              # Configuração da aplicação
 │   └── server.ts           # Inicialização da aplicação
 ├── prisma/
@@ -223,6 +224,38 @@ backend/
 ├── package.json
 ├── tsconfig.json
 └── README.md
+```
+
+### 🏗️ Arquitetura
+
+O projeto segue uma arquitetura limpa com separação clara de responsabilidades:
+
+#### **Controllers**
+
+- Responsáveis por lidar com requisições HTTP
+- Validam dados de entrada
+- Delegam lógica de negócio para os use-cases
+- Retornam respostas HTTP adequadas
+
+#### **Use-Cases**
+
+- Contêm as regras de negócio da aplicação
+- Orquestram múltiplas operações
+- São independentes de infraestrutura
+- Podem ser reutilizados em diferentes contextos
+
+#### **Repositories**
+
+- Camada de abstração para acesso a dados
+- Isolam a lógica do banco de dados
+- Facilitam testes e substituição de implementações
+- Implementam padrões de consulta reutilizáveis
+
+#### **Fluxo de Dados**
+
+```
+Request → Controller → Use-Case → Repository → Database
+Response ← Controller ← Use-Case ← Repository ← Database
 ```
 
 ---
