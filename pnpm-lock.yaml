@@ -26,6 +26,9 @@ importers:
       fastify:
         specifier: ^5.7.4
         version: 5.7.4
+      http-status-codes:
+        specifier: ^2.3.0
+        version: 2.3.0
       pg:
         specifier: ^8.18.0
         version: 8.18.0
