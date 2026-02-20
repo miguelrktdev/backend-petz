@@ -39,6 +39,7 @@ Plataforma social baseada em comunidade para compartilhamento de informações s
 ---
 
 ## Regras de Negócio
+
 - [ ] A senha deve ter no mínimo 8 caracteres, incluindo pelo menos 1 letra maiúscula, 1 número e 1 caractere especial;
 - [ ] O nome de usuário deve ter entre 3 e 30 caracteres (apenas letras, números, ponto e underscore);
 - [ ] O email deve ser válido e único no sistema;
@@ -63,6 +64,7 @@ Plataforma social baseada em comunidade para compartilhamento de informações s
 ---
 
 ## Requisitos Não Funcionais
+
 - [ ] O sistema deve responder em menos de 200ms para 95% das requisições;
 - [ ] O sistema deve responder em menos de 500ms para 99% das requisições;
 - [ ] O sistema deve suportar no mínimo 10.000 usuários simultâneos;
