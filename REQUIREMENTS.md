@@ -72,9 +72,7 @@ Plataforma social baseada em comunidade para compartilhamento de informações s
 - [ ] Cache de dados deve ser implementado para reduzir consultas ao banco de dados;
 - [ ] Usar PostgreSQL como banco de dados principal;
 - [ ] Implementar índices nas colunas de busca frequente (email, username, pet_id);
-- [ ] Realizar backup automático diário com retenção de 30 dias;
-- [ ] Implementar migrations versionadas para controle de schema;
-- [ ] Backend desenvolvido em Node.js com framework Express;
+- [ ] Backend desenvolvido em Node.js com framework Fastify;
 - [ ] Usar TypeScript para type safety;
 - [ ] Usar JWT para autenticação;
 - [ ] Sistema de fila para processamento assíncrono (Bull/Redis);
@@ -85,12 +83,6 @@ Plataforma social baseada em comunidade para compartilhamento de informações s
 - [ ] Implementar proteção contra XSS, CSRF e SQL Injection;
 - [ ] Validar e sanitizar todas as entradas de usuário;
 - [ ] Implementar política de rate limiting;
-- [ ] Fazer auditoria de segurança trimestral;
-- [ ] Taxa de disponibilidade mínima de 99.5%;
-- [ ] Implementar health checks para monitoramento;
-- [ ] Sistema de alerta para eventos críticos;
-- [ ] Plano de recuperação de desastres (RTO: 1 hora, RPO: 15 minutos);
-- [ ] Todos os erros devem ser logados e monitorados;
 - [ ] Todas as endpoints de API devem ser documentadas em OpenAPI/Swagger;
 - [ ] Cobertura de testes deve ser maior que 80%;
 - [ ] Testes unitários para toda lógica de negócio;
@@ -98,14 +90,11 @@ Plataforma social baseada em comunidade para compartilhamento de informações s
 - [ ] Testes de carga para validar escalabilidade;
 - [ ] README em português com instruções de setup;
 - [ ] Documentação de variáveis de ambiente necessárias;
-- [ ] Usar serviço de cloud storage (AWS S3, Google Cloud Storage ou Azure Blob);
 - [ ] Implementar processamento de imagem (resize, otimização);
-- [ ] Gerar URLs pré-assinadas para download seguro;
 - [ ] Implementar política de expiração de arquivos temporários;
 - [ ] Integração com serviço de email para notificações e confirmação;
 - [ ] Integração com provedores OAuth (Google, Twitter, Facebook);
 - [ ] Sistema de notificações em tempo real (WebSocket/Socket.io);
-- [ ] Implementar webhooks para eventos importantes;
 
 ---
 

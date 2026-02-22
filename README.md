@@ -157,7 +157,7 @@ CLOUDINARY_CLOUD_NAME=seu-cloud-name
 CLOUDINARY_API_KEY=sua-api-key
 CLOUDINARY_API_SECRET=sua-api-secret
 
-# Redis (opcional)
+# Redis
 REDIS_URL=redis://localhost:6379
 
 ```
