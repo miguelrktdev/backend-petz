@@ -5,6 +5,13 @@ const schema = z.object({
   NODE_ENV: z.enum(["development", "production", "test"]).default("production"),
   PORT: z.coerce.number().default(3333),
   DATABASE_URL: z.string(),
+  SMTP_HOST: z.string(),
+  SMTP_PORT: z.coerce.number(),
+  SMTP_USER: z.string(),
+  SMTP_PASSWORD: z.string(),
+  SMTP_FROM: z.string(),
+  REDIS_HOST: z.string(),
+  REDIS_PORT: z.coerce.number().default(6379),
 })
 
 const _env = schema.safeParse(process.env)

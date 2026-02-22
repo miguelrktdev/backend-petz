@@ -17,6 +17,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/node": "^25.2.3",
+    "@types/nodemailer": "^7.0.10",
     "@types/pg": "^8.16.0",
     "eslint": "^10.0.0",
     "globals": "^17.3.0",
@@ -32,10 +33,19 @@
     "@prisma/adapter-pg": "^7.4.0",
     "@prisma/client": "^7.4.0",
     "bcryptjs": "^3.0.3",
+    "bullmq": "^5.70.0",
+    "dayjs": "^1.11.19",
     "dotenv": "^17.3.1",
     "fastify": "^5.7.4",
     "http-status-codes": "^2.3.0",
+    "ioredis": "^5.9.3",
+    "nodemailer": "^8.0.1",
     "pg": "^8.18.0",
     "zod": "^4.3.6"
+  },
+  "pnpm": {
+    "overrides": {
+      "ioredis": "5.9.3"
+    }
   }
 }
