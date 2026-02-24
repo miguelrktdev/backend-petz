@@ -5,8 +5,7 @@ import { env } from "~/env.ts"
 
 export class SendEmail {
   public transport = nodemailer.createTransport({
-    host: env.SMTP_HOST,
-    port: env.SMTP_PORT,
+    service: env.SMTP_HOST,
     auth: {
       user: env.SMTP_USER,
       pass: env.SMTP_PASSWORD,

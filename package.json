@@ -8,7 +8,8 @@
     "commit": "gitmoji -c",
     "dev": "tsx watch ./src/server.ts",
     "build": "tsup src --out-dir dist",
-    "start": "node --watch ./dist/server.js"
+    "start": "node --watch ./dist/server.js",
+    "worker:email": "tsx watch ./src/workers/email-worker.ts"
   },
   "keywords": [],
   "author": "@migueldev__",
