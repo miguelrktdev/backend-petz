@@ -22,6 +22,7 @@ model User {
   bio                 String?
   profile_pic         String?
   profile_pic_id      String?
+  email_verified      DateTime?
   created_at          DateTime             @default(now())
   updated_at          DateTime             @updatedAt
   Otps                OTP[]
