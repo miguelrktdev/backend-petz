@@ -6,11 +6,11 @@ const minMessageError = (fieldName: string) => {
 
 const passwordSchema = z
   .string()
-  .min(12, "Password must be at least 12 characters long")
-  .regex(/[A-Z]/, "Password must contain at least one uppercase letter")
-  .regex(/[a-z]/, "Password must contain at least one lowercase letter")
-  .regex(/[0-9]/, "Password must contain at least one number")
-  .regex(/[^A-Za-z0-9]/, "Password must contain at least one special character")
+  .min(12, "A senha precisa conter no mínimo 12 caractéres")
+  .regex(/[A-Z]/, "A senha precisa conter pelo menos uma letra maiúscula")
+  .regex(/[a-z]/, "A senha precisa conter pelo menos uma letra minúscula")
+  .regex(/[0-9]/, "A senha precisa conter pelo menos um número")
+  .regex(/[^A-Za-z0-9]/, "A senha precisa conter pelo menos um caractér especial")
 
 export const register = z
   .object({
@@ -24,7 +24,7 @@ export const register = z
     confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
+    message: "As senhas fornecidas precisam ser iguais",
     path: ["confirmPassword"],
   })
 

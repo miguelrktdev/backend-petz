@@ -53,6 +53,10 @@ export const registerUserController = async (request: FastifyRequest, reply: Fas
       text,
       html,
     })
+    return reply.status(StatusCodes.CREATED).send({
+      success: true,
+      message: "Por favor verifique seu e-mail para confirmar seu cadastro",
+    })
   } catch (error) {
     if (error instanceof UserAlreadyExistsError) {
       return reply.status(StatusCodes.CONFLICT).send({
@@ -62,7 +66,7 @@ export const registerUserController = async (request: FastifyRequest, reply: Fas
     }
     return reply.status(StatusCodes.INTERNAL_SERVER_ERROR).send({
       success: false,
-      message: "Internal server error",
+      message: error,
     })
   }
 }
