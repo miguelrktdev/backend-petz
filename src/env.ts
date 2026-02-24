@@ -6,7 +6,6 @@ const schema = z.object({
   PORT: z.coerce.number().default(3333),
   DATABASE_URL: z.string(),
   SMTP_HOST: z.string(),
-  SMTP_PORT: z.coerce.number(),
   SMTP_USER: z.string(),
   SMTP_PASSWORD: z.string(),
   SMTP_FROM: z.string(),

@@ -29,3 +29,10 @@ export const emailWorker = new Worker(
     concurrency: 5,
   },
 )
+emailWorker.on("failed", (job, err) => {
+  console.error("Job falhou:", err)
+})
+
+emailWorker.on("completed", (job) => {
+  console.log("Job concluído:", job.id)
+})
