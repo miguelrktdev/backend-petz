@@ -15,6 +15,7 @@
       "~/*": ["./src/*"]
     },
     "allowImportingTsExtensions": true,
-    "noEmit": true
+    "noEmit": true,
+    "types": ["vitest/globals", "node"]
   }
 }

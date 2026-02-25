@@ -9,7 +9,9 @@
     "dev": "tsx watch ./src/server.ts",
     "build": "tsup src --out-dir dist",
     "start": "node --watch ./dist/server.js",
-    "worker:email": "tsx watch ./src/workers/email-worker.ts"
+    "worker:email": "tsx watch ./src/workers/email-worker.ts",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage"
   },
   "keywords": [],
   "author": "@migueldev__",
@@ -20,13 +22,16 @@
     "@types/node": "^25.2.3",
     "@types/nodemailer": "^7.0.10",
     "@types/pg": "^8.16.0",
+    "@vitest/coverage-v8": "4.0.18",
     "eslint": "^10.0.0",
     "globals": "^17.3.0",
     "prettier": "3.8.1",
     "prisma": "^7.4.0",
     "tsup": "^8.5.1",
     "tsx": "^4.21.0",
-    "typescript-eslint": "^8.56.0"
+    "typescript-eslint": "^8.56.0",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^4.0.18"
   },
   "dependencies": {
     "@fastify/cors": "^11.2.0",

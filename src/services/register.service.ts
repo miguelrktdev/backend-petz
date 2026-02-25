@@ -1,7 +1,6 @@
 import bcrypt from "bcryptjs"
 import { UserAlreadyExistsError } from "~/errors/user-already-exists.error.ts"
 import type { User } from "~/generated/prisma/client.ts"
-import type { PrismaOTPRepository } from "~/repositories/prisma-otp.service.ts"
 import type { PrismaUserRepository } from "~/repositories/prisma-user.repository.ts"
 
 interface RegisterUserServiceRequest {
@@ -15,10 +14,7 @@ interface RegisterUserServiceResponse {
 }
 
 export class RegisterUserService {
-  constructor(
-    private readonly userRepository: PrismaUserRepository,
-    private readonly otpRepository: PrismaOTPRepository,
-  ) {}
+  constructor(private readonly userRepository: PrismaUserRepository) {}
 
   async handle({ name, username, email, password }: RegisterUserServiceRequest): Promise<RegisterUserServiceResponse> {
     const doesHaveUserWithSameUsername = await this.userRepository.findByUsername(username)
