@@ -8,7 +8,7 @@ Plataforma social baseada em comunidade para compartilhamento de informações s
 
 ## Requisitos Funcionais
 
-- [ ] O usuário pode se cadastrar usando: nome, nome de usuário, email e senha;
+- [ x ] O usuário pode se cadastrar usando: nome, nome de usuário, email e senha;
 - [ ] O usuário pode se autenticar no app usando: email e senha;
 - [ ] O usuário pode fazer autenticação social com: Google, Twitter e Facebook;
 - [ ] O usuário pode recuperar sua senha através de link enviado por email;
@@ -40,9 +40,9 @@ Plataforma social baseada em comunidade para compartilhamento de informações s
 
 ## Regras de Negócio
 
-- [ ] A senha deve ter no mínimo 8 caracteres, incluindo pelo menos 1 letra maiúscula, 1 número e 1 caractere especial;
-- [ ] O nome de usuário deve ter entre 3 e 30 caracteres (apenas letras, números, ponto e underscore);
-- [ ] O email deve ser válido e único no sistema;
+- [ x ] A senha deve ter no mínimo 8 caracteres, incluindo pelo menos 1 letra maiúscula, 1 número e 1 caractere especial;
+- [ x ] O nome de usuário deve ter entre 3 e 30 caracteres (apenas letras, números, ponto e underscore);
+- [ x ] O email deve ser válido e único no sistema;
 - [ ] Foto de perfil: máximo 5MB, apenas JPG/PNG;
 - [ ] Fotos de posts: máximo 10MB cada, máximo 10 imagens por post;
 - [ ] Peso do pet deve ser entre 0.1kg e 200kg;
@@ -67,32 +67,28 @@ Plataforma social baseada em comunidade para compartilhamento de informações s
 
 - [ ] O sistema deve responder em menos de 200ms para 95% das requisições;
 - [ ] O sistema deve responder em menos de 500ms para 99% das requisições;
-- [ ] O sistema deve suportar no mínimo 10.000 usuários simultâneos;
-- [ ] O sistema deve ser capaz de escalar horizontalmente;
 - [ ] Cache de dados deve ser implementado para reduzir consultas ao banco de dados;
-- [ ] Usar PostgreSQL como banco de dados principal;
-- [ ] Implementar índices nas colunas de busca frequente (email, username, pet_id);
-- [ ] Backend desenvolvido em Node.js com framework Fastify;
-- [ ] Usar TypeScript para type safety;
+- [ x ] Usar PostgreSQL como banco de dados principal;
+- [ x ] Backend desenvolvido em Node.js com framework Fastify;
+- [ x ] Usar TypeScript para type safety;
 - [ ] Usar JWT para autenticação;
-- [ ] Sistema de fila para processamento assíncrono (Bull/Redis);
+- [ x ] Sistema de fila para processamento assíncrono (Bull/Redis);
 - [ ] Implementar rate limiting para prevenir abuso;
-- [ ] Todos os dados sensíveis (senhas, tokens) devem ser criptografados;
-- [ ] Implementar HTTPS/TLS para todas as comunicações;
-- [ ] Usar CORS para controlar acesso entre domínios;
-- [ ] Implementar proteção contra XSS, CSRF e SQL Injection;
-- [ ] Validar e sanitizar todas as entradas de usuário;
+- [ x ] Todos os dados sensíveis (senhas, tokens) devem ser criptografados;
+- [ x ] Usar CORS para controlar acesso entre domínios;
+- [ x ] Implementar proteção contra XSS, CSRF e SQL Injection;
+- [ x ] Validar e sanitizar todas as entradas de usuário;
 - [ ] Implementar política de rate limiting;
 - [ ] Todas as endpoints de API devem ser documentadas em OpenAPI/Swagger;
-- [ ] Cobertura de testes deve ser maior que 80%;
-- [ ] Testes unitários para toda lógica de negócio;
+- [ x ] Cobertura de testes deve ser maior que 80%;
+- [ x ] Testes unitários para toda lógica de negócio;
 - [ ] Testes de integração para fluxos críticos;
 - [ ] Testes de carga para validar escalabilidade;
 - [ ] README em português com instruções de setup;
-- [ ] Documentação de variáveis de ambiente necessárias;
+- [ x ] Documentação de variáveis de ambiente necessárias;
 - [ ] Implementar processamento de imagem (resize, otimização);
 - [ ] Implementar política de expiração de arquivos temporários;
-- [ ] Integração com serviço de email para notificações e confirmação;
+- [ x ] Integração com serviço de email para notificações e confirmação;
 - [ ] Integração com provedores OAuth (Google, Twitter, Facebook);
 - [ ] Sistema de notificações em tempo real (WebSocket/Socket.io);
 
@@ -112,6 +108,7 @@ Plataforma social baseada em comunidade para compartilhamento de informações s
 
 - `GET /api/users/:id` - Obter perfil do usuário
 - `GET /api/me` - Obter perfil do usuário autenticado
+- `POST /api/users/upload-profile` - Atualizar a foto de perfil do usuário autenticado
 - `PUT /api/users/:id` - Atualizar perfil
 - `DELETE /api/users/:id` - Deletar conta
 
