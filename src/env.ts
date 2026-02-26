@@ -11,6 +11,8 @@ const schema = z.object({
   SMTP_FROM: z.string(),
   REDIS_HOST: z.string(),
   REDIS_PORT: z.coerce.number().default(6379),
+  JWT_SECRET: z.string(),
+  JWT_EXPIRES_IN: z.coerce.number(),
 })
 
 const _env = schema.safeParse(process.env)

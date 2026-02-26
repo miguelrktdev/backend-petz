@@ -99,7 +99,7 @@ Plataforma social baseada em comunidade para compartilhamento de informações s
 ### Autenticação
 
 - `POST /api/auth/register` - Criar nova conta
-- `POST /api/auth/login` - Login com email/senha
+- `POST /api/auth/sessions` - Login com email/senha
 - `POST /api/auth/refresh` - Renovar token
 - `POST /api/auth/logout` - Logout
 - `POST /api/auth/forgot-password` - Recuperar senha
