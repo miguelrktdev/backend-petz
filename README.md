@@ -273,7 +273,7 @@ http://localhost:3333/api
 | Método | Endpoint                | Descrição                |
 | ------ | ----------------------- | ------------------------ |
 | POST   | `/auth/register`        | Criar nova conta         |
-| POST   | `/auth/login`           | Fazer login              |
+| POST   | `/auth/sessions`        | Fazer login              |
 | POST   | `/auth/refresh`         | Renovar token            |
 | POST   | `/auth/logout`          | Fazer logout             |
 | POST   | `/auth/forgot-password` | Solicitar reset de senha |

@@ -28,6 +28,15 @@ export const register = z
     path: ["confirmPassword"],
   })
 
+export const login = z.object({
+  email: z
+    .string()
+    .min(1, { message: minMessageError("E-mail") })
+    .email({ message: "Formato de e-mail inválido" }),
+  password: z.string().min(1, { message: minMessageError("Senha") }),
+})
+
 export const userValidators = {
   register,
+  login,
 }

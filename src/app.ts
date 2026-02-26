@@ -4,6 +4,8 @@ import fastify from "fastify"
 import { StatusCodes } from "http-status-codes"
 import { ZodError } from "zod"
 import { mainRoutes } from "./routes/index.ts"
+import fastifyJWT from "@fastify/jwt"
+import { env } from "./env.ts"
 
 export const app = fastify()
 
@@ -11,6 +13,12 @@ app.register(cors, {
   origin: false,
 })
 app.register(helmet)
+app.register(fastifyJWT, {
+  secret: env.JWT_SECRET,
+  sign: {
+    expiresIn: env.JWT_EXPIRES_IN,
+  },
+})
 app.register(mainRoutes, { prefix: "/api" })
 app.setErrorHandler((error, _request, reply) => {
   if (error instanceof ZodError) {
