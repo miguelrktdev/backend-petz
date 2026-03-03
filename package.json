@@ -10,6 +10,7 @@
     "build": "tsup src --out-dir dist",
     "start": "node --watch ./dist/server.js",
     "worker:email": "tsx watch ./src/workers/email-worker.ts",
+    "workers": "pnpm run worker:email",
     "test": "vitest",
     "test:coverage": "vitest --coverage"
   },
